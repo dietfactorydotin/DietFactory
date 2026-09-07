@@ -135,14 +135,16 @@
           <h2>Stay close.<br><span>We're almost ready.</span></h2>
           <p>Be among the first to know when DIET FACTORY opens its doors — and when the menu finally gets its reveal.</p>
         </div>
-        <form onsubmit="return signup(event)">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLScqzjnm4h6labfDkpJNOy49bYv72Jk93PDSDZvoWCPJIKFCkQ/formResponse" method="post" target="google-form-response" onsubmit="return signup(event)">
           <label for="email">Your email</label>
           <div class="input-row">
             <input id="email" type="email" placeholder="you@example.com" required>
             <button type="submit">Notify me <span>↗</span></button>
           </div>
+          <input type="hidden" id="google-email" name="entry.1045781291">
           <small id="form-note">No spam. Just the good stuff.</small>
         </form>
+        <iframe name="google-form-response" title="Google Form submission" hidden></iframe>
       </div>
     </section>
   </main>
@@ -155,6 +157,7 @@
     </div>
     <div class="footer-links">
       <a href="mailto:hello@dietfactory.in">hello@dietfactory.in</a>
+      <a href="https://www.instagram.com/dietfactory.in/" target="_blank" rel="noopener noreferrer">@dietfactory.in</a>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
@@ -163,6 +166,8 @@
 function signup(e){
   e.preventDefault();
   const note=document.getElementById('form-note');
+  document.getElementById('google-email').value=document.getElementById('email').value;
+  e.target.submit();
   note.textContent='You’re on the list. We’ll be in touch when the time is right.';
   note.classList.add('success');
   e.target.reset();
