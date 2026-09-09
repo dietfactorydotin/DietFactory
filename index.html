@@ -135,16 +135,14 @@
           <h2>Stay close.<br><span>We're almost ready.</span></h2>
           <p>Be among the first to know when DIET FACTORY opens its doors — and when the menu finally gets its reveal.</p>
         </div>
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLScqzjnm4h6labfDkpJNOy49bYv72Jk93PDSDZvoWCPJIKFCkQ/formResponse" method="post" target="google-form-response" onsubmit="return signup(event)">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLScqzjnm4h6labfDkpJNOy49bYv72Jk93PDSDZvoWCPJIKFCkQ/viewform" method="get" onsubmit="return signup(event)">
           <label for="email">Your email</label>
           <div class="input-row">
             <input id="email" type="email" placeholder="you@example.com" required>
             <button type="submit">Notify me <span>↗</span></button>
           </div>
-          <input type="hidden" id="google-email" name="entry.1045781291">
           <small id="form-note">No spam. Just the good stuff.</small>
         </form>
-        <iframe name="google-form-response" title="Google Form submission" hidden></iframe>
       </div>
     </section>
   </main>
@@ -450,23 +448,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const email =
       document.getElementById("email");
 
-    const googleEmail =
-      document.getElementById("google-email");
-
     const note =
       document.getElementById("form-note");
 
-    googleEmail.value =
-      email.value;
-
-    form.submit();
+    const googleFormUrl = new URL(form.action);
+    googleFormUrl.searchParams.set("usp", "pp_url");
+    googleFormUrl.searchParams.set("entry.1045781291", email.value.trim());
 
     note.textContent =
-      "You're on the list. We'll be in touch when the time is right.";
+      "Opening the signup form...";
 
-    note.classList.add("success");
-
-    setTimeout(() => form.reset(), 500);
+    window.location.assign(googleFormUrl.href);
 
     return false;
   };
