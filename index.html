@@ -25,7 +25,7 @@
 
   <header class="nav">
     <a class="brand" href="#top" aria-label="DIET FACTORY home">
-      <img src="assets/logo_without_bg.png" alt="DIET FACTORY">
+      <img src="assets/logo_without_bg_no_tagline.png" alt="DIET FACTORY">
     </a>
     <nav>
       <a href="#story">Our story</a>
@@ -169,20 +169,310 @@
   </footer>
 
 <script>
-function signup(e){
-  e.preventDefault();
-  const note=document.getElementById('form-note');
-  document.getElementById('google-email').value=document.getElementById('email').value;
-  e.target.submit();
-  note.textContent='You’re on the list. We’ll be in touch when the time is right.';
-  note.classList.add('success');
-  e.target.reset();
-  return false;
-}
-const menu=document.querySelector('.menu');
-const nav=document.querySelector('.nav');
-menu.addEventListener('click',()=>nav.classList.toggle('open'));
-document.querySelectorAll('.nav a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* =======================================================
+     REDUCED MOTION
+  ======================================================= */
+
+  const prefersReducedMotion =
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+
+  /* =======================================================
+     NAVIGATION — SCROLL STATE
+  ======================================================= */
+
+  const nav = document.querySelector(".nav");
+
+  function updateNav() {
+    if (window.scrollY > 35) {
+      nav.classList.add("scrolled");
+    } else {
+      nav.classList.remove("scrolled");
+    }
+  }
+
+  updateNav();
+
+  window.addEventListener(
+    "scroll",
+    updateNav,
+    { passive: true }
+  );
+
+
+  /* =======================================================
+     MOBILE MENU
+  ======================================================= */
+
+  const menu = document.querySelector(".menu");
+
+  if (menu) {
+    menu.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+  }
+
+  document.querySelectorAll(".nav a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("open");
+    });
+  });
+
+
+  /* =======================================================
+     SCROLL REVEAL
+  ======================================================= */
+
+  const revealTargets = [
+    ".section-label",
+    ".statement h2",
+    ".statement-body",
+    ".image-content .eyebrow",
+    ".image-content h2",
+    ".teaser-row",
+    ".promise-head",
+    ".principles article",
+    ".business-panel",
+    ".business-side",
+    ".contact-grid"
+  ];
+
+  revealTargets.forEach(selector => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+
+      element.classList.add("reveal");
+
+      /*
+        Small stagger without becoming overly animated.
+      */
+      const delay =
+        Math.min(index * 70, 350);
+
+      element.style.transitionDelay = `${delay}ms`;
+    });
+  });
+
+
+  const revealObserver = new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("is-visible");
+
+          revealObserver.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.14,
+      rootMargin: "0px 0px -60px 0px"
+    }
+  );
+
+
+  document
+    .querySelectorAll(".reveal")
+    .forEach(element => {
+      revealObserver.observe(element);
+    });
+
+
+  /* =======================================================
+     FOOD IMAGE PARALLAX
+  ======================================================= */
+
+  const foodSection =
+    document.querySelector(".image-break");
+
+  if (
+    foodSection &&
+    !prefersReducedMotion
+  ) {
+
+    let ticking = false;
+
+    function updateFoodParallax() {
+
+      const rect =
+        foodSection.getBoundingClientRect();
+
+      const viewport =
+        window.innerHeight;
+
+      /*
+        Only calculate while section is near viewport.
+      */
+
+      if (
+        rect.bottom > 0 &&
+        rect.top < viewport
+      ) {
+
+        const progress =
+          (viewport - rect.top) /
+          (viewport + rect.height);
+
+        const movement =
+          (progress - .5) * 45;
+
+        foodSection.style.setProperty(
+          "--food-shift",
+          `${movement}px`
+        );
+
+      }
+
+      ticking = false;
+    }
+
+    window.addEventListener(
+      "scroll",
+      () => {
+
+        if (!ticking) {
+
+          requestAnimationFrame(
+            updateFoodParallax
+          );
+
+          ticking = true;
+        }
+
+      },
+      { passive: true }
+    );
+
+  }
+
+
+  /* =======================================================
+     HERO MICRO PARALLAX
+  ======================================================= */
+
+  const heroOrbit =
+    document.querySelector(".hero-orbit");
+
+  if (
+    heroOrbit &&
+    !prefersReducedMotion &&
+    window.innerWidth > 900
+  ) {
+
+    window.addEventListener(
+      "mousemove",
+      event => {
+
+        const x =
+          (event.clientX / window.innerWidth - .5);
+
+        const y =
+          (event.clientY / window.innerHeight - .5);
+
+        heroOrbit.style.transform =
+          `translate3d(${x * 12}px, ${y * 10}px, 0)`;
+
+      }
+    );
+
+  }
+
+
+  /* =======================================================
+     MAGNETIC BUTTON MICRO INTERACTION
+  ======================================================= */
+
+  if (
+    !prefersReducedMotion &&
+    window.innerWidth > 900
+  ) {
+
+    document
+      .querySelectorAll(".button")
+      .forEach(button => {
+
+        button.addEventListener(
+          "mousemove",
+          event => {
+
+            const rect =
+              button.getBoundingClientRect();
+
+            const x =
+              event.clientX -
+              rect.left -
+              rect.width / 2;
+
+            const y =
+              event.clientY -
+              rect.top -
+              rect.height / 2;
+
+            button.style.transform =
+              `translate(${x * .08}px, ${y * .08}px)`;
+
+          }
+        );
+
+        button.addEventListener(
+          "mouseleave",
+          () => {
+
+            button.style.transform =
+              "";
+
+          }
+        );
+
+      });
+
+  }
+
+
+  /* =======================================================
+     EMAIL SIGNUP
+  ======================================================= */
+
+  window.signup = function(e) {
+
+    e.preventDefault();
+
+    const form =
+      e.target;
+
+    const email =
+      document.getElementById("email");
+
+    const googleEmail =
+      document.getElementById("google-email");
+
+    const note =
+      document.getElementById("form-note");
+
+    googleEmail.value =
+      email.value;
+
+    form.submit();
+
+    note.textContent =
+      "You're on the list. We'll be in touch when the time is right.";
+
+    note.classList.add("success");
+
+    form.reset();
+
+    return false;
+  };
+
+
+});
 </script>
 </body>
 </html>
