@@ -1,334 +1,360 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-IN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Diet Factory | Healthy food in BTM Layout, Bengaluru</title>
-<meta name="description" content="Diet Factory, where health meets wellness. Protein salads, juices, shakes and bowls in BTM Layout, Bengaluru. Zero added sugar, olive oil only, no palm oil.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Diet Factory | Where health meets wellness · BTM 1st Stage, Bengaluru</title>
+<meta name="description" content="Fresh juices, smoothies, bowls, toasts and salads in BTM 1st Stage, Bengaluru. Zero added sugar, olive oil only, no palm oil, air frying only. Build your order and send it on WhatsApp.">
+<link rel="canonical" href="https://dietfactorydotin.github.io/DietFactory/">
 <meta name="theme-color" content="#033623">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Diet Factory">
+<meta property="og:locale" content="en_IN">
+<meta property="og:url" content="https://dietfactorydotin.github.io/DietFactory/">
 <meta property="og:title" content="Diet Factory | Where health meets wellness">
-<meta property="og:description" content="Protein salads, juices, shakes and bowls in BTM Layout, Bengaluru. Zero added sugar, olive oil only, no palm oil.">
-<meta property="og:image" content="https://dietfactory.in/assets/og-image.jpg">
+<meta property="og:description" content="Fresh juices, smoothies, bowls, toasts and salads in BTM 1st Stage, Bengaluru. Order on WhatsApp.">
+<meta property="og:image" content="https://dietfactorydotin.github.io/DietFactory/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Diet Factory logo: Where health meets wellness">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" type="image/png" href="assets/favicon.png">
+<meta name="twitter:image" content="https://dietfactorydotin.github.io/DietFactory/assets/og-image.jpg">
+<link rel="icon" type="image/png" sizes="64x64" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-<link rel="preload" as="image" href="assets/logo-cream.webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preload" as="image" href="assets/logo-green-wordmark.webp">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400..700&family=Fredoka:wdth,wght@75..125,400..700&display=swap">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Restaurant","name":"Diet Factory","slogan":"Where health meets wellness","url":"https://dietfactorydotin.github.io/DietFactory/","image":"https://dietfactorydotin.github.io/DietFactory/assets/og-image.jpg","logo":"https://dietfactorydotin.github.io/DietFactory/assets/icon-512.png","telephone":"+916362248157","email":"info@dietfactory.in","address":{"@type":"PostalAddress","streetAddress":"12th Cross, Maruthi Nagar, BTM 1st Stage, Madiwala","addressLocality":"Bengaluru","postalCode":"560068","addressRegion":"Karnataka","addressCountry":"IN"},"sameAs":["https://www.instagram.com/dietfactory.in/"],"servesCuisine":["Healthy food","Juices","Salads"],"priceRange":"₹"}</script>
 <script>document.documentElement.classList.add('js')</script>
 <style>
-:root{
-  /* brand colours, sampled from the logo */
-  --forest:#033623;--forest-deep:#022818;--cream:#fcf4e8;--sage:#c0cabe;
-  --lemon:#efe837;--orange:#f7a225;--leaf:#108e2c;--tomato:#d21429;
-  /* theme tokens */
-  --bg:#fcf4e8;--card:#fffdf8;--ink:#033623;--mut:#4f6a5b;--line:#0336231c;--accent:#108e2c;
-  --r:26px;--display:Fredoka,'Arial Rounded MT Bold',system-ui,sans-serif;
-}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#011a10;--card:#062d1d;--ink:#fcf4e8;--mut:#b5c4b8;--line:#fcf4e81f;--accent:#efe837}}
-:root[data-theme="dark"]{--bg:#011a10;--card:#062d1d;--ink:#fcf4e8;--mut:#b5c4b8;--line:#fcf4e81f;--accent:#efe837}
-
-*,*::before,*::after{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:84px}
-body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Nunito,system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img,svg{display:block;max-width:100%}
-a{color:inherit}
-h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.05}
-:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:6px}
-
-/* loader */
-#load{position:fixed;inset:0;z-index:99;display:grid;place-items:center;background:var(--forest);transition:opacity .6s,visibility .6s;animation:bail 0s 4s forwards}
-#load img{width:min(72vw,420px);height:auto;animation:pop 1.1s ease-in-out infinite alternate}
-#load.off{opacity:0;visibility:hidden}
-@keyframes pop{to{transform:scale(1.06) rotate(-2deg)}}
-@keyframes bail{to{opacity:0;visibility:hidden}}
-
-/* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:calc(14px + env(safe-area-inset-top,0px)) 5vw 14px;color:var(--cream);transition:background .3s,box-shadow .3s,padding .3s}
-nav.s{background:#033623e8;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 8px 28px #0003;padding-block:calc(8px + env(safe-area-inset-top,0px)) 8px}
-.brand img{height:50px;width:auto;opacity:0;transform:translateY(-8px) scale(.94);transition:opacity .35s,transform .35s}
-nav.logo-on .brand img{opacity:1;transform:none}
-nav ul{display:flex;gap:30px;list-style:none;padding:0}
-nav ul a{text-decoration:none;font-weight:800;position:relative}
-nav ul a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:3px;border-radius:3px;background:var(--lemon);transform:scaleX(0);transform-origin:left;transition:transform .25s}
-nav ul a:hover::after{transform:scaleX(1)}
-@media(max-width:760px){nav ul{display:none}.brand img{height:42px}}
-
-/* buttons */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:99px;border:2px solid transparent;font:800 1rem/1 Nunito,sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s,color .2s}
-.btn:hover{transform:translateY(-3px)}
-.btn:active{transform:translateY(3px);box-shadow:none}
-.btn-lemon{background:var(--lemon);color:var(--forest);box-shadow:0 5px 0 #b3ac16}
-.btn-orange{background:var(--orange);color:var(--forest);box-shadow:0 5px 0 #b97510}
-.btn-forest{background:var(--forest);color:var(--cream);box-shadow:0 5px 0 #011c12}
-.btn-ghost{border-color:currentColor;color:var(--cream)}
-.btn-ghost:hover{background:var(--cream);color:var(--forest)}
-nav .btn{padding:11px 20px}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn-forest{background:var(--lemon);color:var(--forest);box-shadow:0 5px 0 #b3ac16}}
-:root[data-theme="dark"] .btn-forest{background:var(--lemon);color:var(--forest);box-shadow:0 5px 0 #b3ac16}
-
-/* hero */
-.hero{position:relative;isolation:isolate;min-height:100svh;display:grid;place-items:center;padding:112px 5vw 176px;overflow:hidden;text-align:center;color:var(--cream);background:radial-gradient(60% 52% at 50% 36%,#0d5838 0%,#033623 72%) var(--forest)}
-.hero-in{position:relative;z-index:2;max-width:900px;display:flex;flex-direction:column;align-items:center}
-.hero-logo{width:clamp(260px,52vw,600px);height:auto;filter:drop-shadow(0 18px 30px #0005);animation:logoIn 1s cubic-bezier(.2,1.35,.4,1) .2s both}
-@keyframes logoIn{from{opacity:0;transform:scale(.82) translateY(20px)}}
-.hero h1{font-size:clamp(1.75rem,4.2vw,3rem);margin-top:26px;text-wrap:balance}
-.js .hero h1 span{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
-.js .hero h1 b{display:inline-block;font-weight:inherit;transform:translateY(115%);animation:up .8s cubic-bezier(.2,.9,.2,1) forwards}
-.hero h1 .l b{color:var(--lemon)}.hero h1 .o b{color:var(--orange)}
-@keyframes up{to{transform:none}}
-.hero p{max-width:42ch;margin:16px auto 30px;text-wrap:pretty;color:var(--sage);font-size:1.12rem}
-.row{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
-
-.fr{position:absolute;z-index:1;width:clamp(56px,7vw,104px);aspect-ratio:1;height:auto;pointer-events:none;filter:drop-shadow(0 14px 14px #0004);animation:fl 5s ease-in-out infinite alternate}
-@keyframes fl{to{margin-top:-24px;rotate:14deg}}
-.f1{left:7vw;top:18%}.f2{left:13vw;top:54%;animation-delay:-2s}.f3{left:4vw;top:74%;width:clamp(44px,4.6vw,70px);animation-delay:-3.5s}
-.f4{right:10vw;top:16%;animation-delay:-1s}.f5{right:17vw;top:46%;animation-delay:-2.5s}.f6{right:4vw;top:30%;width:clamp(44px,5vw,76px);animation-delay:-4s}
-@media(max-width:760px){.f2,.f3,.f5,.f6{display:none}.f1{left:-18px;top:63%;width:66px}.f4{right:-12px;top:14%;width:60px}}
-
-.badge{position:absolute;z-index:1;right:6vw;bottom:176px;width:150px;filter:drop-shadow(0 12px 18px #0004)}
-.badge .spin{transform-origin:100px 100px;animation:spin 16s linear infinite}
-.badge text{font:600 19px Fredoka,sans-serif;letter-spacing:.06em;fill:var(--forest)}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media(max-width:1000px){.badge{display:none}}
-
-.wave{position:absolute;left:0;right:0;bottom:-2px;height:130px;z-index:0}
-.wave svg{position:absolute;bottom:0;width:200%;max-width:none;height:100%;animation:wv 10s linear infinite}
-.wave svg+svg{animation-duration:15s;animation-direction:reverse}
-@keyframes wv{to{transform:translateX(-50%)}}
-
-/* marquee */
-.mq{background:var(--lemon);color:var(--forest);overflow:hidden;white-space:nowrap;padding:14px 0 16px;margin-top:-1px}
-.mq div{display:inline-block;animation:mq 30s linear infinite;font:600 1.6rem var(--display);letter-spacing:.02em}
-.mq span{margin:0 26px;color:var(--tomato)}
-@keyframes mq{to{transform:translateX(-50%)}}
-
-/* sections */
-section{padding:96px 5vw}
-.wrap{max-width:1180px;margin:0 auto}
-.eyebrow{display:block;font:800 .8rem/1 Nunito,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-h2{font-size:clamp(2.3rem,5.4vw,4rem);font-weight:700;margin-bottom:14px}
-.sub{color:var(--mut);max-width:50ch;margin-bottom:42px;font-size:1.08rem}
-.js .up{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s cubic-bezier(.2,.9,.2,1)}
-.js .up.in{opacity:1;transform:none}
-
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px}
-.st{position:relative;overflow:hidden;background:var(--card);border:2px solid var(--line);border-radius:var(--r);padding:30px 26px 28px;border-bottom:10px solid var(--lemon)}
-.st:nth-child(2){border-bottom-color:var(--orange)}.st:nth-child(3){border-bottom-color:var(--tomato)}.st:nth-child(4){border-bottom-color:var(--leaf)}
-.st .n{font:700 4.4rem/1 var(--display)}
-.st p{font-weight:800;margin-top:8px}
-
-.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
-.tabs button{font:800 1rem Nunito,sans-serif;padding:11px 22px;border-radius:99px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,color .2s,transform .2s}
-.tabs button:hover{transform:translateY(-2px)}
-.tabs button[aria-selected="true"]{background:var(--ink);color:var(--bg)}
-#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px}
-.it{background:var(--card);border:2px solid var(--line);border-radius:var(--r);padding:24px;display:flex;flex-direction:column;gap:8px;opacity:0;transform:scale(.92) rotate(-2deg);animation:in .5s forwards;transition:transform .3s,box-shadow .3s}
-.it:hover{transform:translateY(-8px) rotate(1deg);box-shadow:0 20px 34px #0336231f}
-@keyframes in{to{opacity:1;transform:none}}
-.it .e{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;font-size:2.5rem;margin-bottom:6px;background:#efe83766}
-.it:nth-child(4n+2) .e{background:#f7a22559}.it:nth-child(4n+3) .e{background:#108e2c38}.it:nth-child(4n+4) .e{background:#d2142930}
-.it h3{font-size:1.45rem}
-.it p{color:var(--mut);font-size:.96rem;flex:1}
-.pr{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:6px}
-.pr b{font:700 1.7rem var(--display)}
-.tag{background:var(--lemon);color:var(--forest);border-radius:99px;font-size:.78rem;font-weight:800;padding:3px 11px}
-
-.band{background:var(--forest);color:var(--cream)}
-.band .eyebrow{color:var(--lemon)}.band .sub{color:var(--sage)}
-.wg{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
-.w{background:#fcf4e80d;border:2px solid #fcf4e81f;border-radius:var(--r);padding:28px;transition:background .3s,transform .3s}
-.w:hover{background:#fcf4e81a;transform:translateY(-6px)}
-.w i{font-style:normal;font-size:2rem;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--lemon);margin-bottom:16px}
-.w:nth-child(2) i{background:var(--orange)}.w:nth-child(3) i{background:#f4c7cc}.w:nth-child(4) i{background:#9fd9a9}
-.w h3{font-size:1.5rem;margin-bottom:6px}
-.w p{color:var(--sage)}
-
-.rv{position:relative;display:grid;max-width:820px}
-.rv::before{content:"\201C";position:absolute;left:-8px;top:-70px;font:700 9rem/1 var(--display);color:var(--orange);opacity:.9}
-.rv blockquote{grid-area:1/1;padding-top:24px;font:500 clamp(1.4rem,2.8vw,2.1rem)/1.3 var(--display);opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s;pointer-events:none}
-.rv blockquote.on{opacity:1;transform:none;pointer-events:auto}
-.rv cite{display:block;margin-top:16px;font:800 1rem Nunito,sans-serif;font-style:normal;color:var(--accent)}
-.dots{display:flex;gap:10px;margin-top:28px}
-.dots button{width:14px;height:14px;border-radius:50%;border:2px solid var(--ink);background:transparent;padding:0;cursor:pointer;transition:background .2s,width .2s}
-.dots button[aria-current="true"]{background:var(--ink);width:34px;border-radius:99px}
-
-.loc{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:36px;align-items:center}
-.card{position:relative;overflow:hidden;background:var(--forest);color:var(--cream);border-radius:var(--r);padding:34px}
-.card h3{font-size:2rem;color:var(--lemon);margin-bottom:12px}
-.card dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;margin-bottom:26px}
-.card dt{font-weight:800;color:var(--sage);font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;padding-top:3px}
-.card .bowl{position:absolute;right:-34px;top:-34px;width:150px;border-radius:50%;opacity:.95;transform:rotate(12deg)}
-@media(max-width:480px){.card .bowl{width:110px}}
-
-footer{background:var(--forest-deep);color:var(--sage);padding:56px 5vw 34px}
-.fi{max-width:1180px;margin:0 auto;display:flex;gap:30px;justify-content:space-between;align-items:center;flex-wrap:wrap}
-.fbrand img{height:80px;width:auto}
-.fbrand small{display:block;margin-top:10px;font-weight:800;font-size:.72rem;letter-spacing:.3em;color:var(--sage)}
-footer p{color:var(--cream)}
-.copy{max-width:1180px;margin:34px auto 0;padding-top:20px;border-top:1px solid #fcf4e81f;font-size:.9rem}
-
-#cur{position:fixed;left:0;top:0;width:34px;height:34px;border:2px solid var(--orange);border-radius:50%;pointer-events:none;z-index:98;transform:translate(-100px,-100px);transition:width .2s,height .2s,background .2s,margin .2s;display:none}
-#cur.h{width:60px;height:60px;margin:-13px 0 0 -13px;background:#f7a22533}
-@media(pointer:fine){#cur{display:block}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+:root{--g:#033623;--g2:#0b4a32;--mint:#e9f1ec;--mist:#f4f8f5;--lemon:#efe837;--orange:#f7a225;--leaf:#108e2c;--tom:#d21429;--soft:#3d5e50;--navh:64px;--gut:16px;--fc:#033623;--fb:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--fd:Fredoka,"Arial Rounded MT Bold",system-ui,sans-serif}@media(min-width:720px){:root{--gut:32px}}@media(min-width:960px){:root{--navh:80px;--gut:clamp(32px,4vw,64px)}}*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}[hidden]{display:none!important}body{margin:0;background:#fff;color:var(--g);font:400 1.0625rem/1.6 var(--fb);-webkit-font-smoothing:antialiased}img,svg{display:block;max-width:100%}a{color:inherit}h1,h2,h3,h4{font-family:var(--fd);margin:0;line-height:1;text-wrap:balance}p{margin:0}.wrap{width:min(1320px,100% - 2*var(--gut));margin-inline:auto}.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}:focus-visible{outline:3px solid var(--fc);outline-offset:3px}.dk{--fc:var(--lemon);background:var(--g);color:#fff}.ic{width:1.3em;height:1.3em;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.skip{position:absolute;left:12px;top:-80px;z-index:99;background:#fff;color:var(--g);padding:10px 18px;border-radius:999px;font-weight:700}.skip:focus{top:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;min-height:56px;padding:0 1.5em;border-radius:999px;border:2.5px solid transparent;font:600 1.12rem/1 var(--fd);text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s,background .2s;white-space:nowrap}.btn:active{transform:translateY(4px)}.bw{background:#fff;color:var(--g);box-shadow:0 6px 0 #8fb9a2}.bw:hover{transform:translateY(-2px);box-shadow:0 8px 0 #8fb9a2}.bw:active{box-shadow:0 2px 0 #8fb9a2}.bo{border-color:rgba(255,255,255,.55);background:none;color:#fff}.bo:hover{border-color:#fff;background:rgba(255,255,255,.08)}.bg{background:var(--g);color:#fff;box-shadow:0 6px 0 #011a10}.bg:hover{transform:translateY(-2px);box-shadow:0 8px 0 #011a10}.bg:active{box-shadow:0 2px 0 #011a10}.eye{display:inline-flex;align-items:center;gap:10px;font:700 .82rem/1 var(--fb);letter-spacing:.16em;text-transform:uppercase}.eye::before{content:"";width:26px;height:3px;border-radius:2px;background:currentColor}.eye+.h2{margin-top:18px}.h2{font:700 clamp(2.6rem,9vw,6rem)/.92 var(--fd);font-stretch:85%;letter-spacing:-.01em}.sec{padding:clamp(76px,10vw,140px) 0;scroll-margin-top:var(--navh)}.sh{display:grid;gap:18px;margin-bottom:clamp(44px,6vw,80px)}.lede{max-width:36rem;font-size:clamp(1.05rem,1.4vw,1.22rem)}.top{position:sticky;top:0;z-index:40;height:var(--navh);background:#fff;border-bottom:2px solid var(--g)}.nav{display:flex;align-items:center;gap:8px;height:100%}.brand{margin-right:auto;border-radius:8px}.brand img{height:calc(var(--navh) - 12px);width:auto}.nav ul{display:none;list-style:none;margin:0;padding:0;gap:2px}.nav ul a{display:block;padding:10px 14px;border-radius:999px;font:600 1.08rem var(--fd);text-decoration:none}.nav ul a:hover{background:var(--mint)}.ib{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;border:2px solid var(--g);color:var(--g);text-decoration:none}.ib:hover{background:var(--mint)}.nwa{display:none}.bag{display:flex;align-items:center;justify-content:center;gap:10px;width:44px;height:44px;padding:0;border:0;border-radius:999px;background:var(--g);color:#fff;font:600 1.1rem/1 var(--fd);cursor:pointer}.bi{position:relative;display:grid;place-items:center;flex:none}.ct{position:absolute;top:-13px;right:-15px;min-width:22px;height:22px;padding:0 6px;border-radius:11px;background:var(--lemon);color:var(--g);font:700 .8rem/22px var(--fd);text-align:center;box-shadow:0 0 0 2px #fff}.bag .bt,.bag .bs{display:none;white-space:nowrap}.bag.e .ct{display:none}.bump{animation:bump .45s}@keyframes bump{40%{transform:scale(1.3) rotate(-10deg)}}.fly{position:fixed;z-index:60;width:28px;height:28px;pointer-events:none}.fly svg{width:100%;height:100%}.fbar{position:fixed;z-index:45;left:var(--gut);right:var(--gut);bottom:max(12px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;height:66px;padding:0 9px 0 11px;border:0;border-radius:24px;background:var(--g);color:#fff;text-align:left;cursor:pointer;box-shadow:0 0 0 3px #fff,0 16px 34px rgba(1,26,16,.42);transform:translateY(140%);visibility:hidden;transition:transform .45s cubic-bezier(.3,1.3,.5,1),visibility 0s .45s}.fbar.show{transform:none;visibility:visible;transition:transform .45s cubic-bezier(.3,1.3,.5,1)}.fbar .bi{width:44px;height:44px;border-radius:50%;background:#fff;color:var(--g)}.fbar .ct{top:-6px;right:-8px;box-shadow:none}.fbt{flex:1;min-width:0;display:grid;gap:3px}.fbt b{font:700 1.2rem/1 var(--fd)}.fbt small{font-size:.84rem;line-height:1.1;opacity:.85}.fbt b,.fbt small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.fgo{display:inline-flex;align-items:center;gap:6px;height:48px;padding:0 15px;border-radius:17px;background:#fff;color:var(--g);font:600 1.02rem var(--fd);white-space:nowrap}@media(max-width:959px){html.hasbar{scroll-padding-bottom:96px}.bag .bi{color:#fff}}@media(min-width:960px){.fbar{display:none}.nav{gap:10px}.nav ul{display:flex;margin-right:6px}.ntel{display:none}.nwa{display:inline-flex;min-height:50px;padding:0 1.15em;font-size:1.02rem;box-shadow:none;border-color:var(--g);background:#fff;color:var(--g)}.nwa:hover{background:var(--mint)}.bag{width:auto;height:52px;padding:0 6px}.bag .bi{width:40px;height:40px;border-radius:50%;background:#fff;color:var(--g)}.bag .ct{top:-5px;right:-7px;box-shadow:none}.bag .bt,.bag .bs{display:block}.bag .bs{padding:10px 14px;border-radius:999px;background:#fff;color:var(--g)}.bag:hover{background:var(--g2)}}.hero{position:relative;overflow:clip;min-height:calc(100svh - var(--navh));display:flex;flex-direction:column;background:radial-gradient(60% 50% at 0 100%,#0a4530 0,transparent 70%),var(--g);padding-top:clamp(26px,4vw,52px)}.hero>.wrap{position:relative;flex:1;display:flex;flex-direction:column;justify-content:center}.pill{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;padding:8px 14px;border:2px solid rgba(255,255,255,.28);border-radius:999px;font-size:.92rem;line-height:1.2}.hw{position:relative;--hf:clamp(3.3rem,18vw,6.2rem)}.mega{font:700 var(--hf)/.9 var(--fd);font-stretch:84%;letter-spacing:-.015em;margin:.28em 0 .32em;text-wrap:initial}.mega .w{display:block}.mega .l{display:block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}.mega .l+.l{animation-delay:.12s}.mega img{display:inline-block;height:.9em;width:auto;vertical-align:-.1em;margin:0 .02em}.sq{position:relative;display:inline-block;white-space:nowrap}.sq svg{position:absolute;left:0;right:0;bottom:-.1em;width:100%;height:.2em;overflow:visible}.sq path{stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.1s .7s cubic-bezier(.6,0,.2,1) forwards}@keyframes draw{to{stroke-dashoffset:0}}@keyframes rise{from{transform:translateY(.45em);opacity:0}}.hero .lede{color:rgba(255,255,255,.88)}.ctas{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;margin-top:28px}.ctas .btn:first-child{grid-column:1/-1}.ctas .btn{padding:0 1em}@media(max-width:419px){.hm{display:none}}.badge{position:absolute;right:0;top:1.17em;font-size:var(--hf);width:1.85em;aspect-ratio:1;border-radius:50%;background:var(--g);box-shadow:0 0 0 .025em rgba(255,255,255,.4),0 0 0 .1em var(--g),0 0 0 .115em rgba(255,255,255,.14)}.badge svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 30s linear infinite}.badge text{font:600 13.4px var(--fd);fill:#fff;letter-spacing:.02em}.badge img{position:absolute;left:28%;top:27%;width:44%;height:auto}@media(min-width:720px){.hw{--hf:calc((100vw - 2*var(--gut))/6.75)}.mega{margin:.2em 0 .3em}.mega .w{display:inline}.badge{top:auto;bottom:calc(100% - .05em);width:1.5em}}@media(min-width:960px){.hw{--hf:min(10.4vw,10.6rem)}.badge{top:-.1em;bottom:auto;width:1.9em}}@keyframes spin{to{rotate:360deg}}.mqw{position:relative;padding:34px 0 46px;margin-top:clamp(30px,5vw,56px)}.mq{width:112%;margin-left:-6%;rotate:-2.2deg;background:#fff;color:var(--g);border-block:3px solid var(--g);overflow:hidden;box-shadow:0 10px 0 rgba(0,0,0,.2)}.mqt{display:flex;width:max-content}.js .mqt{animation:mq 40s linear infinite}.mqt span{display:flex;align-items:center;gap:.6em;padding:.48em .3em .48em .6em;font:700 clamp(1.35rem,2.7vw,2.3rem)/1 var(--fd);text-transform:uppercase;white-space:nowrap}.mqt svg{width:.95em;height:.95em}@keyframes mq{to{transform:translateX(-50%)}}@media(min-width:960px){.ctas{display:flex;flex-wrap:wrap}}.prom{overflow:clip}.pl4{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 14px}.pl4 li{display:grid;justify-items:center;align-content:start;gap:10px;text-align:center;--d:0s}.pl4 li:nth-child(2){--d:.1s}.pl4 li:nth-child(3){--d:.2s}.pl4 li:nth-child(4){--d:.3s}.st{position:relative;width:min(100%,220px);aspect-ratio:1;color:var(--g);rotate:var(--r);filter:drop-shadow(6px 8px 0 rgba(3,54,35,.13));transition:rotate .5s cubic-bezier(.3,1.7,.5,1)}.pl4 li:hover .st{rotate:0deg}.st svg{position:absolute;inset:0;width:100%;height:100%}.st .pi{inset:25%;width:50%;height:50%;stroke:#033623;stroke-width:3}.pi,.ill svg,.empty svg{stroke-linejoin:round;stroke-linecap:round}.pl4 h3{font:600 clamp(1.3rem,2.3vw,1.85rem)/1.05 var(--fd);margin-top:10px}.pl4 p{max-width:25ch;color:var(--soft);font-size:.98rem;line-height:1.5}@media(min-width:960px){.pl4{grid-template-columns:repeat(4,minmax(0,1fr));gap:32px}.prom .sh{grid-template-columns:1.2fr 1fr;align-items:end}}.mni{padding:clamp(76px,10vw,128px) 0 clamp(48px,6vw,72px)}.mni .wrap{display:grid;gap:22px}.mega2{font:700 clamp(4.6rem,24vw,13.5rem)/.8 var(--fd);font-stretch:78%;letter-spacing:-.02em}.mega2 small{display:block;font-size:.3em;font-stretch:100%;letter-spacing:0;margin-bottom:.15em}.mni .lede{color:rgba(255,255,255,.88)}.mni .lede b{color:#fff}@media(min-width:960px){.mni .wrap{grid-template-columns:1.25fr 1fr;align-items:end;gap:48px}}.chips{position:sticky;top:var(--navh);z-index:30;background:var(--g);box-shadow:0 1px 0 rgba(255,255,255,.14);--fc:var(--lemon)}.cb{position:relative;display:flex;align-items:center;gap:8px;max-width:calc(1320px + 2*var(--gut));margin:0 auto;padding:10px var(--gut)}.cb nav{flex:1;min-width:0}.chips ul{position:relative;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;list-style:none;margin:0;padding:3px 40px 3px 3px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent)}.chips ul::-webkit-scrollbar{display:none}.chips a{display:flex;align-items:center;gap:7px;height:42px;padding:0 16px;border-radius:999px;border:2px solid rgba(255,255,255,.3);color:#fff;font:600 1rem var(--fd);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s,opacity .2s}.chips a span{font-size:.78em;opacity:.7}.chips a:hover{border-color:#fff}.chips a[aria-current]{background:#fff;color:var(--g);border-color:#fff}.chips a.off{opacity:.35}.srch{position:relative;flex:none;width:46px;height:46px;color:#fff}.srch input{width:100%;height:100%;padding:0 0 0 44px;border:2px solid rgba(255,255,255,.3);border-radius:999px;background:var(--g);color:#fff;font:500 1rem var(--fb);outline:0;-webkit-appearance:none;appearance:none}.srch input::placeholder{color:rgba(255,255,255,.72)}.srch input:focus{border-color:var(--lemon)}.srch input::-webkit-search-cancel-button{display:none}.srch>.ic{position:absolute;left:12px;top:12px;pointer-events:none}.sclr{position:absolute;right:6px;top:6px;display:none;place-items:center;width:34px;height:34px;padding:0;border:0;border-radius:50%;background:rgba(255,255,255,.16);color:#fff;cursor:pointer}.sclr .ic{width:18px;height:18px}.srch.q .sclr{display:grid}.srch.q input{padding-right:46px}html:not(.js) .srch,html:not(.js) .bag{display:none}@media(max-width:959px){.srch input{cursor:pointer;color:transparent}.srch input::placeholder{color:transparent}.srch:focus-within,.srch.q{position:absolute;left:var(--gut);right:var(--gut);width:auto;z-index:2}.srch:focus-within input,.srch.q input{cursor:text;color:#fff}.srch:focus-within input::placeholder{color:rgba(255,255,255,.72)}}@media(min-width:960px){.srch{width:min(300px,26vw)}}.nores{padding:64px var(--gut) 110px;text-align:center;color:#fff}.nores p{max-width:30ch;margin:0 auto 24px;font-size:1.1rem}.nores b{display:block;font:700 clamp(2rem,6vw,3rem)/1 var(--fd);margin-bottom:12px}.nores div{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}.stack{background:var(--g)}.anc{display:block;scroll-margin-top:calc(var(--navh) + 66px)}.pn{position:relative;overflow:clip;border-radius:34px 34px 0 0;box-shadow:0 -16px 40px rgba(1,26,16,.3)}.js .pn{position:sticky}.pw{background:#fff;color:var(--g)}.pg{background:var(--g);color:#fff;--fc:var(--lemon);box-shadow:0 -16px 40px rgba(1,26,16,.3),inset 0 2px 0 rgba(255,255,255,.1)}.pn>.wrap{position:relative;z-index:1;display:grid;gap:30px;padding:clamp(36px,5vw,64px) 0 clamp(96px,9vw,112px)}.ph{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:10px 14px}.pnum{grid-column:1/-1;font:600 .95rem var(--fd);letter-spacing:.14em;text-transform:uppercase;opacity:.75}.ph h3{font:700 clamp(2.9rem,13.5vw,7.4rem)/.86 var(--fd);font-stretch:80%;letter-spacing:-.01em}.ill{position:relative;width:clamp(100px,27vw,230px);aspect-ratio:1;border-radius:50%;background:var(--mint);display:grid;place-items:center;rotate:-6deg}.pg .ill{background:#fff}.ill>svg{width:74%;height:74%;stroke:#033623;stroke-width:4}.from{position:absolute;right:0;top:-10%;width:46%;aspect-ratio:1;border-radius:50%;background:var(--lemon);color:var(--g);display:grid;place-content:center;text-align:center;rotate:18deg;font:600 clamp(.62rem,1.1vw,.9rem)/1 var(--fd);box-shadow:0 0 0 3px #fff}.from b{display:block;font-size:1.55em;font-weight:700}.bd{display:grid;gap:30px;align-content:start}.bd h4{display:flex;align-items:center;gap:12px;font:600 1rem var(--fd);letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}.bd h4::after{content:"";flex:1;height:3px;border-radius:2px;background:currentColor;opacity:.18}.bd ul{list-style:none;margin:0;padding:0}.bd li{display:flex;align-items:center;gap:10px;min-height:60px;padding:5px 0}.bd li>span{font:500 clamp(1.08rem,1.6vw,1.36rem)/1.2 var(--fd)}.bd li::after{content:"";order:1;flex:1 1 26px;min-width:26px;height:6px;margin-top:.45em;background:radial-gradient(circle,currentColor 1.7px,transparent 2.1px) 0 50%/10px 6px repeat-x;opacity:.42}.bd li>b{order:2}.bd .q{order:3}.bd li.w2>:first-child{flex:1;text-wrap:balance}.bd li.w2::after{display:none}.bd li>b{font:600 clamp(1.08rem,1.6vw,1.36rem)/1 var(--fd);white-space:nowrap}.bd li>b.ask{font-size:.95rem;padding:6px 10px;border-radius:999px;border:2px dashed currentColor}.q{display:inline-flex;align-items:center;flex:none;gap:2px;padding:3px;border-radius:999px;transition:background .2s}.q:not(.z){background:var(--mint)}.pg .q:not(.z){background:rgba(255,255,255,.14)}.q button{display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;background:transparent;color:inherit;font:600 1.6rem/1 var(--fd);cursor:pointer;transition:transform .15s}.q button:active{transform:scale(.88)}.q .pl{background:var(--g);color:#fff}.pg .q .pl{background:#fff;color:var(--g)}.q .mi:hover{background:rgba(3,54,35,.08)}.pg .q .mi:hover{background:rgba(255,255,255,.12)}.q output{min-width:1.4em;text-align:center;font:600 1.12rem var(--fd)}@media(max-width:420px){.bd li{gap:8px}}.q.z .mi,.q.z output{display:none}@media(min-width:960px){.pn>.wrap{grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(40px,6vw,104px);align-items:start}.ph{grid-template-columns:1fr;align-items:start;gap:16px}.ph h3{font-size:clamp(3rem,7.6vw,7.4rem)}.ph h3.long{font-size:clamp(2.8rem,6.1vw,6rem)}.ill{margin-top:22px}.from{right:-12%;top:-6%}}.stack{counter-reset:pn}.anc{counter-increment:pn}@media(min-width:960px){.pn::before{content:"0" counter(pn);position:absolute;right:-.03em;bottom:-.2em;font:700 clamp(12rem,27vw,26rem)/1 var(--fd);font-stretch:78%;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:2.5px var(--g);opacity:.12;pointer-events:none}.pg::before{-webkit-text-stroke-color:#fff;opacity:.14}}@media(min-width:1100px){.bd.two{grid-template-columns:1fr 1fr;gap:44px}}.how{position:relative;overflow:clip}.hg{display:grid;gap:56px}.hg .sh{margin:0}.steps{list-style:none;margin:0;padding:0;display:grid;gap:14px}.steps li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 22px;align-items:start;padding:24px 24px 26px;border-radius:28px;background:var(--g2);box-shadow:inset 0 0 0 2px rgba(255,255,255,.1)}.steps li:nth-child(2){background:#fff;color:var(--g)}.steps .n{font:700 clamp(4.2rem,7vw,5.6rem)/.8 var(--fd);min-width:.62em;color:transparent;-webkit-text-stroke:2.5px #fff}.steps li:nth-child(2) .n{-webkit-text-stroke-color:var(--g)}.steps h3{font:600 clamp(1.7rem,2.6vw,2.2rem)/1 var(--fd);margin:4px 0 8px}.steps p{opacity:.9}.hcta{display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px;margin-top:36px}.hcta a.tl{font:600 1.1rem var(--fd);display:inline-flex;align-items:center;gap:8px;text-underline-offset:5px}.chw{position:relative;width:min(100%,440px);margin:0 auto;padding:0 6px}.deco{position:absolute;z-index:0;width:auto;pointer-events:none}.d1{height:150px;left:-34px;bottom:-46px;rotate:-14deg}.d2{height:104px;right:-26px;top:-58px;rotate:12deg}.chat{position:relative;z-index:1;margin:0;background:#fff;color:var(--g);border-radius:30px;overflow:hidden;rotate:1.5deg;box-shadow:0 0 0 3px #fff,12px 14px 0 rgba(0,0,0,.22)}.cht{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--mist);border-bottom:2px solid var(--mint)}.cht img{width:46px;height:46px;border-radius:50%}.cht b{display:block;font:600 1.15rem/1.15 var(--fd)}.cht small{font-size:.86rem;color:var(--soft)}.chb{display:flex;flex-direction:column;gap:14px;min-height:230px;padding:20px 16px;background:#fff radial-gradient(circle,rgba(3,54,35,.07) 1.5px,transparent 2px) 0 0/16px 16px}.chl{align-self:center;padding:5px 12px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 2px var(--mint);font:700 .72rem/1.2 var(--fb);letter-spacing:.12em;text-transform:uppercase;color:var(--soft)}.bub{align-self:flex-end;max-width:94%;padding:12px 14px 6px;border-radius:20px 20px 6px 20px;background:#dcefe2;font-size:.95rem;line-height:1.5;white-space:pre-line;overflow-wrap:anywhere}.bub small{display:flex;justify-content:flex-end;align-items:center;gap:3px;margin-top:2px;font-size:.74rem;color:var(--soft)}.bub small .ic{width:16px;height:16px;color:var(--leaf)}.chf{display:flex;gap:10px;align-items:center;padding:12px 14px 16px;border-top:2px solid var(--mint)}.chf span{flex:1;display:flex;align-items:center;height:44px;padding:0 16px;border-radius:999px;box-shadow:inset 0 0 0 2px var(--mint);color:var(--soft)}.chf i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--g);color:#fff}@media(min-width:960px){.hg{grid-template-columns:minmax(0,1fr) minmax(380px,440px);gap:64px clamp(56px,7vw,112px);align-items:start}.hg .sh{grid-column:1/-1;grid-template-columns:1.2fr 1fr;align-items:end}.chw{grid-column:2;grid-row:2;margin-top:14px}.hs{grid-column:1;grid-row:2}.d1{height:220px;left:-96px;bottom:-60px}.d2{height:150px;right:-44px;top:-84px}.chw{margin:0}}.vg{display:grid;gap:44px}address{font:500 clamp(1.4rem,2.5vw,1.95rem)/1.25 var(--fd);font-style:normal;margin:26px 0}address strong{font-weight:700}.cl{list-style:none;margin:30px 0 0;padding:0;display:grid;gap:10px}.cl a{display:flex;align-items:center;gap:14px;min-height:74px;padding:12px 16px 12px 12px;border-radius:22px;background:var(--mist);box-shadow:inset 0 0 0 2px var(--mint);text-decoration:none;transition:box-shadow .2s,transform .2s}.cl a:hover{box-shadow:inset 0 0 0 2.5px var(--g);transform:translateY(-2px)}.cl .i{display:grid;place-items:center;width:46px;height:46px;flex:none;border-radius:50%;background:var(--g);color:#fff}.cl span{min-width:0;font:600 1.08rem/1.2 var(--fd);overflow-wrap:anywhere}.cl small{display:block;margin-bottom:3px;font:700 .72rem var(--fb);letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}.map{position:relative;min-height:380px;margin-right:6px;border-radius:32px;overflow:hidden;border:3px solid var(--g);box-shadow:6px 6px 0 var(--g);background:var(--mint)}.mfb{position:absolute;inset:0;width:100%;height:100%}.mlb{position:absolute;left:50%;top:calc(50% + 12px);translate:-50% 0;padding:7px 14px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 2px var(--g);font:600 .95rem/1.2 var(--fd);white-space:nowrap}.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.map .mp{position:absolute;inset:auto auto 16px 16px;display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--g);color:#fff;font:600 1rem var(--fd);text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.25)}@media(min-width:600px){.cl{grid-template-columns:1fr 1fr}}@media(min-width:960px){.vg{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:72px;align-items:stretch}.map{min-height:560px;margin-right:10px;box-shadow:10px 10px 0 var(--g)}}.ft{padding:clamp(70px,9vw,120px) 0 calc(48px + env(safe-area-inset-bottom));text-align:center}.hasbar .ft{padding-bottom:calc(112px + env(safe-area-inset-bottom))}.ft .wrap{display:grid;justify-items:center;gap:30px}.flogo{width:min(560px,88%);height:auto}.ft ul{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 26px;list-style:none;margin:0;padding:0;font:600 1.08rem var(--fd)}.ft ul a{text-decoration:none}.ft ul a:hover{text-decoration:underline;text-underline-offset:5px}.fp{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}.fp span{padding:8px 14px;border-radius:999px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.25);font:600 .95rem var(--fd)}.ft small{font-size:.9rem;color:rgba(255,255,255,.75)}@media(min-width:960px){.hasbar .ft{padding-bottom:48px}}html:has(.cart[open]){overflow:hidden}.cart{padding:0;border:0;color:var(--g);background:#fff;width:100%;max-width:100%;max-height:92dvh;margin:auto 0 0;border-radius:28px 28px 0 0;overflow:hidden}.cart[open]{display:flex;animation:up .4s cubic-bezier(.2,.9,.3,1)}.cart::backdrop{background:rgba(1,26,16,.6)}@keyframes up{from{transform:translateY(100%)}}@keyframes side{from{transform:translateX(100%)}}.ci{display:flex;flex-direction:column;width:100%;min-height:0}.chd{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 20px 16px;background:var(--g);color:#fff;--fc:var(--lemon)}.chd h2{font:700 2rem/1 var(--fd)}.chd p{font-size:.92rem;opacity:.8;margin-top:4px}.x{display:grid;place-items:center;width:46px;height:46px;flex:none;border-radius:50%;border:2px solid rgba(255,255,255,.5);background:transparent;color:#fff;cursor:pointer}.x:hover{background:rgba(255,255,255,.12)}.cbd{flex:1;min-height:0;overflow:auto;padding:6px 20px 22px}.cl2{list-style:none;margin:0;padding:0}.cl2 li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;align-items:center;gap:6px 10px;padding:14px 0;border-bottom:2px dashed var(--mint)}.cl2 .nm{font:600 1.12rem/1.2 var(--fd)}.cl2 small{display:block;color:var(--soft);font-size:.88rem}.cl2 .lt{min-width:3.6em;font:600 1.12rem var(--fd);text-align:right}.empty{display:none;padding:34px 0 10px;text-align:center}.empty svg{width:96px;height:96px;margin:0 auto 14px;stroke:#033623;stroke-width:4}.empty p{font:600 1.25rem/1.3 var(--fd);margin-bottom:6px}.empty a{font-weight:700}.cart.e .empty{display:block}.cart.e .fl,.cart.e .cl2{display:none}.fl{display:grid;gap:14px;margin-top:20px}.fl label{display:grid;gap:6px;font:600 1rem var(--fd)}.fl label span{font:400 .85rem var(--fb);color:var(--soft)}.fl input,.fl textarea{width:100%;padding:12px 14px;border:2px solid #c9dccf;border-radius:16px;font:inherit;font:400 1rem/1.4 var(--fb);color:var(--g);background:var(--mist);resize:vertical}.fl input:focus,.fl textarea:focus{outline:none;border-color:var(--g);background:#fff}.cft{padding:16px 20px calc(16px + env(safe-area-inset-bottom));background:var(--mist);border-top:2px solid var(--mint)}.tot{display:flex;justify-content:space-between;align-items:baseline;font:600 1.15rem var(--fd)}.tot strong{font-size:1.9rem;font-weight:700}.tn{font-size:.88rem;color:var(--soft);min-height:1.2em}.send{width:100%;margin-top:12px}.send[aria-disabled=true]{opacity:.45;box-shadow:none;cursor:not-allowed;transform:none}.cr{display:flex;justify-content:space-between;align-items:center;gap:6px 12px;flex-wrap:wrap;margin-top:12px;font-size:.86rem;color:var(--soft)}.lnk{padding:8px 2px;border:0;background:none;color:var(--g);font:600 1rem var(--fd);text-decoration:underline;text-underline-offset:4px;cursor:pointer}.cart.e .lnk{display:none}@media(min-width:720px){.cart{margin:0 0 0 auto;width:min(460px,100%);height:100dvh;max-height:100dvh;border-radius:28px 0 0 28px}.cart[open]{animation-name:side}}@media(prefers-reduced-motion:no-preference){.io .st{transition:scale .7s cubic-bezier(.3,1.6,.5,1) var(--d),opacity .3s var(--d),rotate .5s cubic-bezier(.3,1.7,.5,1)}.io li:not(.in) .st{scale:.4;opacity:0}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.sq path{stroke-dashoffset:0}}
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-  <symbol id="lemon" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#efe837" stroke="#022818" stroke-width="5"/><circle cx="50" cy="50" r="35" fill="#f8f2a4"/><path d="M50 17V83M17 50H83M27 27L73 73M73 27L27 73" stroke="#efe837" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="50" r="6" fill="#efe837"/></symbol>
-  <symbol id="orange" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#f7a225" stroke="#022818" stroke-width="5"/><circle cx="50" cy="50" r="35" fill="#ffd38f"/><path d="M50 17V83M17 50H83M27 27L73 73M73 27L27 73" stroke="#f7a225" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="50" r="6" fill="#f7a225"/></symbol>
-  <symbol id="leaf" viewBox="0 0 100 100"><path d="M12 88C10 46 40 12 88 10C90 56 60 88 12 88Z" fill="#108e2c" stroke="#022818" stroke-width="5" stroke-linejoin="round"/><path d="M16 84C40 60 60 40 82 16" stroke="#7fd08c" stroke-width="4" fill="none" stroke-linecap="round"/></symbol>
-  <symbol id="tomato" viewBox="0 0 100 100"><circle cx="50" cy="58" r="36" fill="#d21429" stroke="#022818" stroke-width="5"/><ellipse cx="36" cy="60" rx="6" ry="10" fill="#fff" opacity=".35"/><path d="M50 10L53.5 21.1L65.2 21.1L55.7 27.9L59.4 38.9L50 32L40.6 38.9L44.3 27.9L34.8 21.1L46.5 21.1Z" fill="#108e2c" stroke="#022818" stroke-width="3" stroke-linejoin="round"/></symbol>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.5 20.5 4.8 16A9 9 0 1 1 8 19.3z"/><path d="M9 8.2c.2-.5.5-.6.8-.6h.5c.2 0 .4 0 .5.4l.8 1.8c.1.2 0 .4-.1.6l-.6.7c-.1.2-.1.3 0 .5.4.8 1 1.5 1.8 2 .5.4 1 .6 1.4.8.2.1.3 0 .5-.1l.7-.8c.2-.2.4-.2.6-.1l1.7.8c.3.1.4.2.4.4 0 .4-.1 1-.5 1.4-.5.5-1.3.8-2 .8-.9 0-2.3-.4-3.9-1.8-1.9-1.7-2.5-3.5-2.7-4.2-.2-.8 0-1.7.4-2.2z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-ph" viewBox="0 0 24 24"><path d="M5 3.5h3.5l2 5-2.4 1.6a12 12 0 0 0 5.8 5.8l1.6-2.4 5 2V19a2 2 0 0 1-2 2A17 17 0 0 1 3 5.5a2 2 0 0 1 2-2z"/></symbol>
+<symbol id="i-ml" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 7 9 6 9-6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.5s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9.5" r="2.6"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1" fill="currentColor"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1.3 11.3a2 2 0 0 1-2 1.7H8.3a2 2 0 0 1-2-1.7z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></symbol>
+<symbol id="i-ar" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+<symbol id="i-sr" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m15.5 15.5 5 5"/></symbol>
+<symbol id="i-tk" viewBox="0 0 24 24"><path d="m2 13 4 4 8-9m-3 7 2 2 8-9"/></symbol>
+<symbol id="i-go" viewBox="0 0 24 24"><path d="M3.5 10.8 20.5 3.5l-7.3 17-2.1-7.9z"/></symbol>
+<symbol id="i-lem" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#efe837" stroke="#033623" stroke-width="2"/><path d="M12 4.5v15M4.5 12h15M6.7 6.7l10.6 10.6M17.3 6.7 6.7 17.3" stroke="#033623" stroke-width="1.4"/></symbol>
+<symbol id="i-lf" viewBox="0 0 24 24"><path d="M4 20C4 10 10 4 21 3c0 10-6 17-17 17z" fill="#108e2c" stroke="#033623" stroke-width="2" stroke-linejoin="round"/><path d="M4 20 14 10" stroke="#033623" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="sc" viewBox="0 0 200 200"><circle cx="100" cy="100" r="72" fill="currentColor" stroke="currentColor" stroke-width="34" stroke-linecap="round" stroke-dasharray="0 28.27"/><circle cx="100" cy="100" r="72" fill="none" stroke="#fff" stroke-width="2.5" stroke-dasharray="5 7"/><circle cx="100" cy="100" r="62" fill="#fff"/></symbol>
 </svg>
+<a class="skip" href="#menu">Skip to the menu</a>
 
-<div id="load"><img src="assets/logo-cream.webp" alt="" width="1200" height="679"></div>
-<div id="cur" aria-hidden="true"></div>
-
-<nav id="nav">
-  <a class="brand" href="#top" aria-label="Diet Factory home"><img src="assets/logo-cream-wordmark.webp" alt="Diet Factory" width="520" height="275"></a>
-  <ul><li><a href="#why">Why us</a></li><li><a href="#menu">Menu</a></li><li><a href="#reviews">Reviews</a></li><li><a href="#visit">Visit</a></li></ul>
-  <a class="btn btn-lemon" href="https://wa.me/910000000000" target="_blank" rel="noopener">Order now</a>
-</nav>
-
-<header class="hero" id="top">
-  <div class="hero-in">
-    <img class="hero-logo" id="heroLogo" src="assets/logo-cream.webp" alt="Diet Factory, where health meets wellness" width="1200" height="679">
-    <h1 id="h1">Eat clean. Zero sugar. No palm oil.</h1>
-    <p>Protein salads, smoothies, juices and bowls made fresh in BTM Layout, Bengaluru. Only olive oil, never added sugar.</p>
-    <div class="row"><a class="btn btn-orange" href="https://wa.me/910000000000" target="_blank" rel="noopener">Order on WhatsApp</a><a class="btn btn-ghost" href="#menu">See the menu</a></div>
-  </div>
-  <svg class="fr f1" data-d="30" viewBox="0 0 100 100" aria-hidden="true"><use href="#lemon"/></svg>
-  <svg class="fr f2" data-d="-24" viewBox="0 0 100 100" aria-hidden="true"><use href="#leaf"/></svg>
-  <svg class="fr f3" data-d="40" viewBox="0 0 100 100" aria-hidden="true"><use href="#tomato"/></svg>
-  <svg class="fr f4" data-d="-30" viewBox="0 0 100 100" aria-hidden="true"><use href="#tomato"/></svg>
-  <svg class="fr f5" data-d="36" viewBox="0 0 100 100" aria-hidden="true"><use href="#orange"/></svg>
-  <svg class="fr f6" data-d="-42" viewBox="0 0 100 100" aria-hidden="true"><use href="#leaf" transform="matrix(-1 0 0 1 100 0)"/></svg>
-  <svg class="badge" viewBox="0 0 200 200" aria-hidden="true">
-    <defs><path id="bc" d="M100 100m-72 0a72 72 0 1 1 144 0a72 72 0 1 1-144 0"/></defs>
-    <circle cx="100" cy="100" r="98" fill="#efe837"/>
-    <g class="spin"><text><textPath href="#bc" textLength="450" lengthAdjust="spacing">NO ADDED SUGAR ✦ ZERO PALM OIL ✦</textPath></text></g>
-    <use href="#orange" x="64" y="64" width="72" height="72"/>
-  </svg>
-  <div class="wave" aria-hidden="true">
-    <svg viewBox="0 0 1200 130" preserveAspectRatio="none"><path fill="#f7a225" d="M0 50Q150 0 300 50T600 50T900 50T1200 50V130H0Z"/></svg>
-    <svg viewBox="0 0 1200 130" preserveAspectRatio="none"><path fill="#efe837" d="M0 76Q150 30 300 76T600 76T900 76T1200 76V130H0Z"/></svg>
-  </div>
+<header class="top">
+<div class="wrap nav">
+<a class="brand" href="#top"><img src="assets/logo-green-wordmark.webp" width="520" height="276" alt="Diet Factory home"></a>
+<nav aria-label="Primary"><ul>
+<li><a href="#promises">Promises</a></li>
+<li><a href="#menu">Menu</a></li>
+<li><a href="#how">How to order</a></li>
+<li><a href="#visit">Visit</a></li>
+</ul></nav>
+<a class="ib ntel" href="tel:+916362248157" aria-label="Call Diet Factory"><svg class="ic"><use href="#i-ph"/></svg></a>
+<a class="ib ntel" href="https://wa.me/916362248157" target="_blank" rel="noopener" aria-label="Chat with Diet Factory on WhatsApp"><svg class="ic"><use href="#i-wa"/></svg></a>
+<a class="btn nwa" href="https://wa.me/916362248157" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>WhatsApp</a>
+<button class="bag e" type="button" data-basket-open aria-haspopup="dialog" aria-controls="cart" aria-label="Your order is empty"><span class="bi"><svg class="ic"><use href="#i-bag"/></svg><span class="ct">0</span></span><span class="bt">Your order</span><span class="bs">₹0</span></button>
+</div>
 </header>
-<div class="mq" aria-hidden="true"><div id="mq"></div></div>
 
-<main>
-<section id="why"><div class="wrap">
-  <div class="up"><span class="eyebrow">Our promise</span><h2>Made the honest way</h2><p class="sub">Four promises behind every cup and bowl.</p></div>
-  <div class="stats up">
-    <div class="st"><div class="n" data-t="0" data-f="100">0%</div><p>Added sugar</p></div>
-    <div class="st"><div class="n" data-t="100" data-f="0">100%</div><p>Olive oil cooking</p></div>
-    <div class="st"><div class="n" data-t="0" data-f="100">0%</div><p>Palm oil</p></div>
-    <div class="st"><div class="n" data-t="100" data-f="0">100%</div><p>Fresh every day</p></div>
-  </div>
-</div></section>
+<main id="top">
+<section class="hero dk" aria-labelledby="h1">
+<div class="wrap">
+<div class="ht">
+<p class="pill"><svg class="ic"><use href="#i-pin"/></svg>BTM 1st Stage, Bengaluru</p>
+<div class="hw"><h1 class="mega" id="h1"><span class="sr">Diet Factory: </span><span class="l"><span class="w">Where <img src="assets/icon-cup.webp" width="214" height="410" alt=""></span> health</span> <span class="l"><span class="w">meets</span> <span class="sq">wellness.<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 12c34-10 58-10 84 0s52 9 78 0 50-9 76 0 34 6 54-2" fill="none" stroke="#efe837" stroke-width="7" stroke-linecap="round"/></svg></span></span></h1>
+<div class="badge" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="cp" d="M100 100m-81 0a81 81 0 1 1 162 0a81 81 0 1 1-162 0"/></defs><text><textPath href="#cp" textLength="506" lengthAdjust="spacing">ZERO ADDED SUGAR • OLIVE OIL ONLY • NO PALM OIL • AIR FRYING ONLY •</textPath></text></svg><img src="assets/icon-bowl.webp" width="256" height="276" alt=""></div></div>
+</div>
+<div class="hb">
+<p class="lede">Fresh juices, smoothies, bowls, toasts and salads, made with zero added sugar and olive oil only. Build your order from the menu and send it to us on WhatsApp.</p>
+<div class="ctas">
+<a class="btn bw" href="#menu">See the menu<svg class="ic" style="rotate:90deg"><use href="#i-ar"/></svg></a>
+<a class="btn bo" href="https://wa.me/916362248157" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg><span><span class="hm">Order on </span>WhatsApp</span></a>
+<a class="btn bo" href="tel:+916362248157"><svg class="ic"><use href="#i-ph"/></svg>Call us</a>
+</div>
+</div>
+</div>
+<div class="mqw" aria-hidden="true"><div class="mq"><div class="mqt">
+<span>Zero added sugar<svg><use href="#i-lem"/></svg></span><span>Olive oil only<svg><use href="#i-lf"/></svg></span><span>No palm oil<svg><use href="#i-lem"/></svg></span><span>Air frying only<svg><use href="#i-lf"/></svg></span><span>Where health meets wellness<svg><use href="#i-lem"/></svg></span></div></div></div>
+</section>
 
-<section id="menu" style="padding-top:20px"><div class="wrap">
-  <div class="up"><span class="eyebrow">Fresh from the factory</span><h2>Our menu</h2><p class="sub">Simple, filling and sugar free. Sweetness comes from fruit and dates only.</p></div>
-  <div class="tabs" id="tabs" role="tablist" aria-label="Menu categories"></div>
-  <div id="grid" role="tabpanel" aria-live="polite"></div>
-</div></section>
+<section class="sec prom" id="promises" aria-labelledby="h-prom">
+<div class="wrap">
+<div class="sh"><div><p class="eye">House rules</p><h2 class="h2" id="h-prom">Four promises in every cup &amp; bowl.</h2></div><p class="lede">No fine print and no exceptions. From a ₹59 juice to a loaded salad, everything is made the same honest way.</p></div>
+<ul class="pl4">
+<li><div class="st" aria-hidden="true" style="--r:-7deg"><svg><use href="#sc"/></svg><svg class="pi" viewBox="0 0 64 64"><path d="M32 15 49 23.5 32 32 15 23.5z" fill="#fff"/><path d="M15 23.5v19L32 51V32z" fill="#e9f1ec"/><path d="M49 23.5v19L32 51V32z" fill="#fff"/><circle cx="32" cy="33" r="27" fill="none" stroke="#d21429" stroke-width="5"/><path d="M13 14l38 38" stroke="#d21429" stroke-width="5"/></svg></div><h3>Zero added sugar</h3><p>Sweetness comes from the fruit. We never add sugar.</p></li>
+<li><div class="st" aria-hidden="true" style="--r:5deg"><svg><use href="#sc"/></svg><svg class="pi" viewBox="0 0 64 64"><path d="M26 9h10v8l5 7v31a4 4 0 0 1-4 4H25a4 4 0 0 1-4-4V24l5-7z" fill="#fff"/><path d="M21 36h20v19a4 4 0 0 1-4 4H25a4 4 0 0 1-4-4z" fill="#efe837"/><rect x="25" y="4" width="12" height="7" rx="2" fill="#108e2c"/><path d="M45 58c2-12 6-22 13-30" fill="none"/><ellipse cx="53" cy="37" rx="4" ry="6.5" fill="#108e2c" transform="rotate(35 53 37)"/><ellipse cx="47" cy="47" rx="3.6" ry="5.5" fill="#108e2c" transform="rotate(-30 47 47)"/></svg></div><h3>Olive oil only</h3><p>Olive oil is the only oil we cook and dress with.</p></li>
+<li><div class="st" aria-hidden="true" style="--r:-4deg"><svg><use href="#sc"/></svg><svg class="pi" viewBox="0 0 64 64"><path d="M31 30c-1 9 0 18 3 25" fill="none" stroke-width="5"/><path d="M32 28c-6-9-17-9-23-2 9-1 15 1 23 2zm0 0c6-9 17-9 23-2-9-1-15 1-23 2zm0 0c-2-9 2-17 10-19-4 5-7 12-10 19zm0 0c1-9-3-17-11-19 4 6 7 12 11 19z" fill="#108e2c"/><circle cx="32" cy="33" r="27" fill="none" stroke="#d21429" stroke-width="5"/><path d="M13 14l38 38" stroke="#d21429" stroke-width="5"/></svg></div><h3>No palm oil</h3><p>Not in our food. Not in anything we make.</p></li>
+<li><div class="st" aria-hidden="true" style="--r:8deg"><svg><use href="#sc"/></svg><svg class="pi" viewBox="0 0 64 64"><path d="M24 14c-3 2.5-3 5 0 7.5m8-7.5c-3 2.5-3 5 0 7.5m8-7.5c-3 2.5-3 5 0 7.5" fill="none" stroke="#f7a225" stroke-width="3.5"/><path d="M14 27a8 8 0 0 1 8-8h20a8 8 0 0 1 8 8v24a6 6 0 0 1-6 6H20a6 6 0 0 1-6-6z" fill="#fff"/><path d="M14 31h36" /><rect x="19" y="35" width="26" height="17" rx="4" fill="#e9f1ec"/><rect x="25" y="41" width="14" height="5" rx="2.5" fill="#033623"/><circle cx="32" cy="25" r="2.2" fill="#033623" stroke="none"/><path d="M19 57v3m26-3v3"/></svg></div><h3>Air frying only</h3><p>Anything crisp is air fried, never deep fried.</p></li>
+</ul>
+</div>
+</section>
 
-<section class="band"><div class="wrap">
-  <div class="up"><span class="eyebrow">Where health meets wellness</span><h2>What you get</h2><p class="sub">Food that fuels the day without the crash.</p></div>
-  <div class="wg up">
-    <div class="w"><i>💪</i><h3>High protein</h3><p>Chicken, paneer, eggs, tofu and pulses in every salad and bowl.</p></div>
-    <div class="w"><i>🫒</i><h3>Olive oil only</h3><p>Dressings and cooking use olive oil. Nothing else.</p></div>
-    <div class="w"><i>🍯</i><h3>Naturally sweet</h3><p>Juices and shakes use fruit and dates, never refined sugar.</p></div>
-    <div class="w"><i>🥗</i><h3>Fresh daily</h3><p>Prepared in small batches in the morning.</p></div>
-  </div>
-</div></section>
+<section class="menu" id="menu" aria-labelledby="h-menu">
+<div class="mni dk"><div class="wrap">
+<h2 class="mega2" id="h-menu"><small>The</small>Menu</h2>
+<div><p class="eye">33 items · 5 categories · prices in ₹</p><p class="lede" style="margin-top:16px">Pick what you like and send your order straight to us on WhatsApp. We confirm everything on chat.</p></div>
+</div></div>
+<div class="chips"><div class="cb"><nav aria-label="Menu sections"><ul>
+<li><a href="#juices">Juices<span aria-hidden="true">11</span></a></li><li><a href="#shakes">Shakes &amp; Smoothies<span aria-hidden="true">8</span></a></li><li><a href="#bowls">Bowls<span aria-hidden="true">5</span></a></li><li><a href="#toasts">Toasts<span aria-hidden="true">4</span></a></li><li><a href="#salads">Salads<span aria-hidden="true">5</span></a></li>
+</ul></nav><div class="srch" role="search"><label class="sr" for="q">Search the menu</label><input id="q" type="search" placeholder="Search the menu" autocomplete="off" enterkeyhint="search"><svg class="ic" aria-hidden="true"><use href="#i-sr"/></svg><button class="sclr" type="button" aria-label="Clear search"><svg class="ic"><use href="#i-x"/></svg></button></div></div></div>
+<div class="stack">
+<div class="nores" id="nores" hidden><p><b>No match on the menu.</b>Ask us on WhatsApp, or clear the search to see everything.</p><div><a class="btn bw" href="https://wa.me/916362248157" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg>Ask on WhatsApp</a><button class="btn bo" type="button" data-qreset>Show the full menu</button></div></div>
+<span class="anc" id="juices"></span>
+<section class="pn pw" aria-labelledby="h-ju"><div class="wrap">
+<header class="ph"><p class="pnum">01 / 05 · 11 juices</p><h3 id="h-ju">Juices</h3>
+<div class="ill" aria-hidden="true"><svg viewBox="0 0 120 120"><path d="M58 52 74 10" stroke-width="11"/><path d="M58 52 74 10" stroke="#d21429" stroke-width="4"/><path d="M30 40h56l-7 66a6 6 0 0 1-6 5H43a6 6 0 0 1-6-5z" fill="#fff"/><path d="M34 60c9-5 17 3 26-1s16-4 23 0l-4.5 44a4 4 0 0 1-4 3H45a4 4 0 0 1-4-3z" fill="#f7a225" stroke="none"/><path d="M30 40h56l-7 66a6 6 0 0 1-6 5H43a6 6 0 0 1-6-5z" fill="none"/><path d="M45 72v20" stroke="#fff" stroke-width="4"/><circle cx="88" cy="40" r="16" fill="#efe837"/><path d="M88 27v26M75 40h26M79 31l18 18M97 31 79 49" stroke-width="2.5"/><circle cx="88" cy="40" r="16" fill="none"/></svg><span class="from">from<b>₹59</b></span></div></header>
+<div class="bd two">
+<div><h4>Signature blends</h4><ul>
+<li><span>ABC</span><b>₹89</b></li>
+<li><span>Detox Mix</span><b>₹89</b></li>
+<li><span>Immunity Booster</span><b>₹99</b></li>
+<li><span>Skin Glow</span><b>₹119</b></li>
+</ul></div>
+<div><h4>Fresh juices</h4><ul>
+<li><span>Papaya</span><b>₹59</b></li>
+<li><span>Pineapple</span><b>₹59</b></li>
+<li><span>Orange</span><b>₹59</b></li>
+<li><span>Carrot</span><b>₹59</b></li>
+<li><span>Beetroot + Watermelon</span><b>₹59</b></li>
+<li><span>Watermelon</span><b>₹59</b></li>
+<li><span>Apple</span><b>₹79</b></li>
+</ul></div>
+</div></div></section>
 
-<section id="reviews"><div class="wrap">
-  <div class="up"><span class="eyebrow">Reviews</span><h2>Loved in BTM</h2><p class="sub">Sample reviews. Replace with your real customers' words.</p></div>
-  <div class="rv up" id="rv">
-    <blockquote class="on">The paneer tikka salad keeps me full till evening. No sugar crash at all.<cite>Ananya, BTM 2nd Stage</cite></blockquote>
-    <blockquote>Finally a shake that isn't sugar syrup. The dates and nuts one is my daily.<cite>Rohit, Madiwala</cite></blockquote>
-    <blockquote>Avocado french toast for breakfast, green detox juice for the walk to work.<cite>Meera, Jayanagar</cite></blockquote>
-  </div>
-  <div class="dots" id="dots"></div>
-</div></section>
+<span class="anc" id="shakes"></span>
+<section class="pn pg" aria-labelledby="h-sh"><div class="wrap">
+<header class="ph"><p class="pnum">02 / 05 · 8 drinks</p><h3 id="h-sh" class="long">Shakes &amp; Smoothies</h3>
+<div class="ill" aria-hidden="true"><svg viewBox="0 0 120 120"><path d="M68 40 80 6" stroke-width="11"/><path d="M68 40 80 6" stroke="#108e2c" stroke-width="4"/><path d="M34 54h52l-6 52a6 6 0 0 1-6 5H46a6 6 0 0 1-6-5z" fill="#efe837"/><path d="M45 66l3 36M60 66v36M75 66l-3 36" stroke="#fff" stroke-width="3.5"/><path d="M33 56c-3-11 5-19 13-18 1-9 8-14 14-14s13 5 14 14c8-1 16 7 13 18z" fill="#fff"/><path d="M28 56h64" stroke-width="5"/><circle cx="60" cy="20" r="9" fill="#d21429"/><path d="M60 11c1-4 5-6 9-5" fill="none"/></svg><span class="from">from<b>₹99</b></span></div></header>
+<div class="bd"><ul>
+<li><span>Classic Banana Smoothie</span><b>₹139</b></li>
+<li><span>Avocado Smoothie</span><b>₹169</b></li>
+<li><span>Dry Fruit Smoothie</span><b>₹199</b></li>
+<li><span>Berry Oats Smoothie</span><b>₹199</b></li>
+<li><span>Avocado Dates</span><b>₹99</b></li>
+<li><span>Roasted Cashew Dates</span><b>₹99</b></li>
+<li><span>Strawberry Cream Shake</span><b>₹149</b></li>
+<li><span>Signature Protein Shake</span><b>₹249</b></li>
+</ul></div></div></section>
 
-<section id="visit" style="padding-top:20px"><div class="wrap loc">
-  <div class="up"><span class="eyebrow">Find us</span><h2>Visit us</h2><p class="sub">Walk in, pick up, or order on WhatsApp.</p>
-    <a class="btn btn-forest" href="https://www.google.com/maps/search/?api=1&amp;query=Diet+Factory+BTM+Layout+Bengaluru" target="_blank" rel="noopener">Open in Maps</a></div>
-  <div class="card up">
-    <img class="bowl" src="assets/apple-touch-icon.png" alt="" width="180" height="180">
-    <h3>Diet Factory</h3>
-    <dl><dt>Where</dt><dd>BTM Layout, Bengaluru, Karnataka</dd><dt>Hours</dt><dd>Open daily, 8:00 AM to 10:00 PM</dd><dt>Phone</dt><dd>+91 00000 00000</dd></dl>
-    <a class="btn btn-orange" href="https://wa.me/910000000000" target="_blank" rel="noopener">Order on WhatsApp</a>
-  </div>
-</div></section>
+<span class="anc" id="bowls"></span>
+<section class="pn pw" aria-labelledby="h-bo"><div class="wrap">
+<header class="ph"><p class="pnum">03 / 05 · 5 bowls</p><h3 id="h-bo">Bowls</h3>
+<div class="ill" aria-hidden="true"><svg viewBox="0 0 120 120"><path d="M86 52 104 18" stroke-width="5"/><ellipse cx="105" cy="15" rx="6" ry="9" fill="#fff" transform="rotate(30 105 15)"/><circle cx="38" cy="54" r="13" fill="#efe837"/><circle cx="38" cy="54" r="5" fill="#fff" stroke-width="2.5"/><circle cx="62" cy="47" r="14" fill="#108e2c"/><circle cx="62" cy="47" r="6" fill="#e9f1ec" stroke-width="2.5"/><circle cx="84" cy="56" r="9" fill="#d21429"/><path d="M12 60h96a48 48 0 0 1-96 0z" fill="#fff"/><path d="M22 72a38 38 0 0 0 16 24" fill="none" stroke="#108e2c" stroke-width="5"/><path d="M12 60h96"/></svg><span class="from">from<b>₹99</b></span></div></header>
+<div class="bd"><ul>
+<li><span>Fresh Fruit Bowl</span><b>₹99</b></li>
+<li><span>Yogurt Fruit Bowl</span><b>₹199</b></li>
+<li><span>Exotica Bliss Bowl</span><b>₹249</b></li>
+<li><span>Power Breakfast Bowl</span><b>₹149</b></li>
+<li><span>Sweet Potato Harvest Bowl</span><b>₹199</b></li>
+</ul></div></div></section>
+
+<span class="anc" id="toasts"></span>
+<section class="pn pg" aria-labelledby="h-to"><div class="wrap">
+<header class="ph"><p class="pnum">04 / 05 · 4 toasts</p><h3 id="h-to">Toasts</h3>
+<div class="ill" aria-hidden="true"><svg viewBox="0 0 120 120"><path d="M24 54c-10-4-12-18-4-26 9-10 25-14 40-14s31 4 40 14c8 8 6 22-4 26v48a6 6 0 0 1-6 6H30a6 6 0 0 1-6-6z" fill="#f7a225"/><path d="M33 58c-7-3-8-12-3-17 7-7 18-10 30-10s23 3 30 10c5 5 4 14-3 17v40a3 3 0 0 1-3 3H36a3 3 0 0 1-3-3z" fill="#fdf3c4" stroke="none"/><path d="M60 46c-14 0-20 12-20 24 0 13 9 22 20 22s20-9 20-22c0-12-6-24-20-24z" fill="#108e2c"/><path d="M60 52c-9 0-14 9-14 18 0 9 6 16 14 16s14-7 14-16c0-9-5-18-14-18z" fill="#efe837" stroke="none"/><circle cx="60" cy="72" r="8" fill="#f7a225"/></svg><span class="from">from<b>₹119</b></span></div></header>
+<div class="bd"><ul>
+<li><span>Banana Bliss Toast</span><b>₹119</b></li>
+<li><span>Avocado Sunrise Toast</span><b>₹129</b></li>
+<li><span>Blueberry Granola Crunch Toast</span><b>₹169</b></li>
+<li><span>Grilled Chicken Toast</span><b class="ask">Ask us</b></li>
+</ul></div></div></section>
+
+<span class="anc" id="salads"></span>
+<section class="pn pw" aria-labelledby="h-sa"><div class="wrap">
+<header class="ph"><p class="pnum">05 / 05 · 5 salads</p><h3 id="h-sa">Salads</h3>
+<div class="ill" aria-hidden="true"><svg viewBox="0 0 120 120"><path d="M84 52 100 16" stroke-width="5"/><path d="M95 12l-4 9m10-7-4 9" stroke-width="3.5"/><path d="M24 58c-7-10 0-24 11-23 2-10 16-13 21-4 9-6 22 0 20 12 9 1 12 9 8 15z" fill="#108e2c"/><path d="M40 50l8-6m10 8 4-10" fill="none" stroke-width="3"/><circle cx="72" cy="47" r="8" fill="#d21429"/><circle cx="86" cy="53" r="6.5" fill="#d21429"/><path d="M12 60h96a48 48 0 0 1-96 0z" fill="#f7a225"/><path d="M24 72a37 37 0 0 0 15 24" fill="none" stroke-width="5"/><path d="M12 60h96"/></svg><span class="from">from<b>₹99</b></span></div></header>
+<div class="bd"><ul>
+<li><span>Grilled Chicken Caesar Salad</span><b>₹249</b></li>
+<li><span>Mexican Chicken Salad</span><b>₹229</b></li>
+<li><span>Sweet Potato Salad</span><b>₹99</b></li>
+<li><span>Signature Protein Salad</span><b>₹269</b></li>
+<li><span>Healthy Crunchy Salad</span><b>₹99</b></li>
+</ul></div></div></section>
+</div>
+</section>
+
+<section class="sec how dk" id="how" aria-labelledby="h-how">
+<div class="wrap hg">
+<div class="sh"><div><p class="eye">How to order</p><h2 class="h2" id="h-how">Three taps to fresh.</h2></div><p class="lede">No app and no sign-up. Your order reaches our WhatsApp as a ready-made message, just like this one.</p></div>
+<div class="chw">
+<img class="deco d1" src="assets/icon-cup.webp" width="214" height="410" alt="" loading="lazy">
+<img class="deco d2" src="assets/icon-bowl.webp" width="256" height="276" alt="" loading="lazy">
+<figure class="chat" aria-label="Preview of the WhatsApp message your order sends">
+<div class="cht"><img src="assets/apple-touch-icon.png" width="180" height="180" alt="" loading="lazy"><p><b>Diet Factory</b><small>+91 63622 48157</small></p></div>
+<div class="chb"><span class="chl" id="pv-l">Example order</span><p class="bub"><span id="pv">Hi Diet Factory! I'd like to order:
+• 1 × Avocado Sunrise Toast — ₹129
+• 1 × Detox Mix — ₹89
+Total: ₹218</span><small aria-hidden="true">now<svg class="ic"><use href="#i-tk"/></svg></small></p></div>
+<div class="chf" aria-hidden="true"><span>Message</span><i><svg class="ic"><use href="#i-go"/></svg></i></div>
+</figure>
+</div>
+<div class="hs"><ol class="steps">
+<li><span class="n" aria-hidden="true">1</span><div><h3>Pick</h3><p>Tap + on anything on the menu. Your order adds up as you go.</p></div></li>
+<li><span class="n" aria-hidden="true">2</span><div><h3>Send</h3><p>Open your order, add your name and any notes, then hit “Send order on WhatsApp”. The message writes itself.</p></div></li>
+<li><span class="n" aria-hidden="true">3</span><div><h3>Enjoy</h3><p>We reply on WhatsApp to confirm your order, pickup or delivery, and anything priced on request.</p></div></li>
+</ol>
+<div class="hcta"><a class="btn bw" href="#menu">Start your order<svg class="ic"><use href="#i-ar"/></svg></a><a class="tl" href="tel:+916362248157"><svg class="ic"><use href="#i-ph"/></svg>Or call +91 63622 48157</a></div>
+</div>
+</div>
+</section>
+
+<section class="sec visit" id="visit" aria-labelledby="h-visit">
+<div class="wrap vg">
+<div>
+<p class="eye">Visit &amp; contact</p>
+<h2 class="h2" id="h-visit">Find us in BTM 1st Stage.</h2>
+<address><strong>Diet Factory</strong><br>12th Cross, Maruthi Nagar<br>BTM 1st Stage, Madiwala<br>Bengaluru 560068</address>
+<a class="btn bg" href="https://www.google.com/maps/search/?api=1&amp;query=Diet+Factory+12th+Cross+Maruthi+Nagar+BTM+1st+Stage+Madiwala+Bengaluru+560068" target="_blank" rel="noopener"><svg class="ic"><use href="#i-go"/></svg>Get directions</a>
+<ul class="cl">
+<li><a href="tel:+916362248157"><span class="i"><svg class="ic"><use href="#i-ph"/></svg></span><span><small>Call</small>+91 63622 48157</span></a></li>
+<li><a href="https://wa.me/916362248157" target="_blank" rel="noopener"><span class="i"><svg class="ic"><use href="#i-wa"/></svg></span><span><small>WhatsApp</small>+91 63622 48157</span></a></li>
+<li><a href="mailto:info@dietfactory.in"><span class="i"><svg class="ic"><use href="#i-ml"/></svg></span><span><small>Email</small>info@dietfactory.in</span></a></li>
+<li><a href="https://www.instagram.com/dietfactory.in/" target="_blank" rel="noopener"><span class="i"><svg class="ic"><use href="#i-ig"/></svg></span><span><small>Instagram</small>@dietfactory.in</span></a></li>
+</ul>
+</div>
+<div class="map"><svg class="mfb" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M262 250c40-20 90 0 150-14v180H250z" fill="#cfe3d6"/><g fill="none" stroke="#fff" stroke-linecap="round"><path d="M-20 126 420 98M-20 272 420 300M118-20 102 420M290-20 304 420" stroke-width="24"/><path d="M-20 44 420 30M-20 200 420 188M-20 360 420 372M30-20 22 420M200-20 208 420M380-20 390 420" stroke-width="10"/></g><g transform="translate(200 186)" stroke="#033623" stroke-width="5" stroke-linejoin="round"><ellipse cy="4" rx="22" ry="7" fill="#033623" opacity=".18" stroke="none"/><path d="M0 0C-24-28-38-46-38-64a38 38 0 0 1 76 0C38-46 24-28 0 0z" fill="#033623"/><circle cy="-64" r="14" fill="#efe837"/></g></svg><p class="mlb">Diet Factory, BTM 1st Stage</p><iframe src="https://maps.google.com/maps?q=12th+Cross+Maruthi+Nagar+BTM+1st+Stage+Madiwala+Bengaluru+560068&amp;z=16&amp;output=embed" title="Map showing Diet Factory, 12th Cross, Maruthi Nagar, BTM 1st Stage, Bengaluru" loading="lazy"></iframe><a class="mp" href="https://www.google.com/maps/search/?api=1&amp;query=Diet+Factory+12th+Cross+Maruthi+Nagar+BTM+1st+Stage+Madiwala+Bengaluru+560068" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Open in Google Maps</a></div>
+</div>
+</section>
 </main>
 
-<footer>
-  <div class="fi">
-    <div class="fbrand"><img src="assets/logo-cream-wordmark.webp" alt="Diet Factory" width="520" height="275" loading="lazy"><small>WHERE HEALTH MEETS WELLNESS</small></div>
-    <p>No added sugar. Only olive oil. No palm oil.<br>BTM Layout, Bengaluru</p>
-    <a class="btn btn-lemon" href="https://www.instagram.com/dietfactory.in/" target="_blank" rel="noopener">Instagram</a>
-  </div>
-  <div class="copy">© <span id="yr">2026</span> Diet Factory. All rights reserved.</div>
+<footer class="ft dk">
+<div class="wrap">
+<img class="flogo" src="assets/logo-cream.webp" width="1200" height="679" alt="Diet Factory: Where health meets wellness" loading="lazy">
+<div class="fp" aria-label="Our promises"><span>Zero added sugar</span><span>Olive oil only</span><span>No palm oil</span><span>Air frying only</span></div>
+<nav aria-label="Footer"><ul>
+<li><a href="#menu">Menu</a></li><li><a href="tel:+916362248157">Call</a></li><li><a href="https://wa.me/916362248157" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="mailto:info@dietfactory.in">Email</a></li><li><a href="https://www.instagram.com/dietfactory.in/" target="_blank" rel="noopener">Instagram</a></li>
+</ul></nav>
+<small>© <span id="yr">2026</span> Diet Factory · 12th Cross, Maruthi Nagar, BTM 1st Stage, Madiwala, Bengaluru 560068</small>
+</div>
 </footer>
 
+<p class="sr" aria-live="polite" id="live"></p>
+
+<button class="fbar" type="button" data-basket-open aria-haspopup="dialog" aria-controls="cart"><span class="bi"><svg class="ic"><use href="#i-bag"/></svg><span class="ct">0</span></span><span class="fbt"><b>₹0</b><small>0 items</small></span><span class="fgo">Review order<svg class="ic"><use href="#i-ar"/></svg></span></button>
+
+<dialog class="cart e" id="cart" aria-labelledby="c-h">
+<div class="ci">
+<div class="chd"><div><h2 id="c-h">Your order</h2><p>Review it, then send it on WhatsApp.</p></div><button class="x" type="button" data-close aria-label="Close your order"><svg class="ic"><use href="#i-x"/></svg></button></div>
+<div class="cbd">
+<div class="empty"><svg viewBox="0 0 120 120" aria-hidden="true"><path d="M12 60h96a48 48 0 0 1-96 0z" fill="#e9f1ec"/><path d="M12 60h96"/><path d="M24 72a37 37 0 0 0 15 24" fill="none" stroke="#108e2c" stroke-width="5"/></svg><p>Your order is empty.</p><span>Tap + next to anything on the <a href="#menu" data-close>menu</a>.</span></div>
+<ul class="cl2" id="c-l" tabindex="-1" aria-label="Items in your order"></ul>
+<div class="fl">
+<label for="o-name">Your name <span>(optional)</span></label><input id="o-name" autocomplete="name" maxlength="60">
+<label for="o-notes">Pickup or delivery address/notes <span>(optional)</span></label><textarea id="o-notes" rows="3" maxlength="400"></textarea>
+</div>
+</div>
+<div class="cft">
+<div class="tot"><span>Total</span><strong id="c-t">₹0</strong></div>
+<p class="tn" id="c-n"></p>
+<a class="btn bg send" id="c-send" href="https://wa.me/916362248157" target="_blank" rel="noopener" aria-disabled="true"><svg class="ic"><use href="#i-wa"/></svg>Send order on WhatsApp</a>
+<div class="cr"><span>Opens WhatsApp with your order typed out.</span><button class="lnk" type="button" data-clear>Clear order</button></div>
+<p class="sr" aria-live="polite" id="live2"></p>
+</div>
+</div>
+</dialog>
+
 <script>
-const M={Juices:[["🥬","Green Detox","Spinach, cucumber, apple, lemon",119],["🍉","Watermelon Mint","Watermelon, fresh mint, lime",99],["🥕","Beet Carrot Ginger","Beetroot, carrot, ginger, orange",119],["🍊","Fresh Orange","Cold pressed, no water, no sugar",109]],
-Shakes:[["🍌","Peanut Butter Banana","Banana, peanut butter, whey protein",169],["🌰","Dates & Nuts","Dates, almonds, cashew, milk",159],["🫐","Berry Blast","Mixed berries, yogurt, protein",179],["🍫","Choco Oats","Cocoa, oats, banana, protein",169]],
-Salads:[["🍗","Grilled Chicken","Chicken, greens, cherry tomato, olive oil",229],["🧀","Paneer Tikka","Paneer, peppers, cucumber, mint dressing",209],["🫘","Chickpea Quinoa","Chickpea, quinoa, lemon, olive oil",189],["🥑","Egg & Avocado","Boiled egg, avocado, rocket, seeds",219]],
-Bowls:[["🍚","Chicken Rice Bowl","Brown rice, chicken, sauteed veggies",249],["🌾","Paneer Millet Bowl","Millet, paneer, beans, greens",229],["🥔","Egg Sweet Potato","Egg, sweet potato, broccoli, hummus",199],["🥦","Tofu Veggie Bowl","Tofu, quinoa, broccoli, sesame",219]],
-Toast:[["🥑","Avocado French Toast","Egg-dipped multigrain toast, avocado paste, chilli flakes, olive oil",179]]};
-const $=s=>document.querySelector(s),$$=s=>document.querySelectorAll(s);
-
-// hero headline: rise word by word, colour the promises
-const h1=$('#h1');
-h1.innerHTML=h1.textContent.trim().split(' ').map((w,i)=>`<span class="${i<2?'':i<4?'l':'o'}"><b style="animation-delay:${.95+i*.11}s">${w}</b></span>`).join(' ');
-
-// menu tabs
-const tabs=$('#tabs'),grid=$('#grid');
-function show(k){
-  [...tabs.children].forEach(b=>{const on=b.textContent===k;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1});
-  grid.innerHTML=M[k].map((x,i)=>`<article class="it" style="animation-delay:${i*.08}s"><div class="e" aria-hidden="true">${x[0]}</div><h3>${x[1]}</h3><p>${x[2]}</p><div class="pr"><span class="tag">No added sugar</span><b>₹${x[3]}</b></div></article>`).join('');
+(()=>{
+const d=document,de=d.documentElement,R=e=>e.getBoundingClientRect(),$=(s,c=d)=>c.querySelector(s),$$=(s,c=d)=>[...c.querySelectorAll(s)];
+const WA='https://wa.me/916362248157',KEY='df-order-v1',RM=matchMedia('(prefers-reduced-motion: reduce)');
+const inr=n=>'₹'+n.toLocaleString('en-IN'),pl=(n,w)=>n+' '+w+(n==1?'':'s');
+const price=new Map();
+const ctl=(n,menu)=>{const s=d.createElement('span');s.className='q z';s.dataset.n=n;s.innerHTML='<button type="button" class="mi">−</button><output aria-hidden="true">0</output><button type="button" class="pl"'+(menu?' data-add="'+n+'"':'')+'>+</button>';return s};
+$$('.bd li').forEach(li=>{const n=li.firstElementChild.textContent.trim(),p=li.children[1].textContent.replace(/\D/g,'');price.set(n,p?+p:null);li.append(ctl(n,1))});
+let st={items:{},name:'',notes:''};
+try{const s=JSON.parse(localStorage.getItem(KEY)||'null');if(s&&s.items){for(const k in s.items){const v=s.items[k]|0;if(price.has(k)&&v>0)st.items[k]=Math.min(v,99)}st.name=String(s.name||'');st.notes=String(s.notes||'')}}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+const dlg=$('#cart'),list=$('#c-l'),send=$('#c-send'),nm=$('#o-name'),nt=$('#o-notes'),bag=$('.bag'),fb=$('.fbar'),live=$('#live'),live2=$('#live2'),pv=$('#pv'),pvl=$('#pv-l'),SAMPLE=pv.textContent;
+nm.value=st.name;nt.value=st.notes;
+const keys=()=>[...price.keys()].filter(k=>st.items[k]);
+const sum=()=>{let c=0,t=0,u=0;for(const k of keys()){const v=st.items[k],p=price.get(k);c+=v;if(p==null)u+=v;else t+=p*v}return{c,t,u}};
+const tsay=({t,u})=>u?(t?inr(t)+' plus items to confirm':'price to confirm'):inr(t);
+const msg=()=>{const L=["Hi Diet Factory! I'd like to order:"];for(const k of keys()){const v=st.items[k],p=price.get(k);L.push('• '+v+' × '+k+' — '+(p==null?'price to confirm':inr(p*v)))}const{t,u}=sum();L.push('Total: '+(u?(t?inr(t)+' (+ items to confirm)':'price to confirm'):inr(t)));const a=st.name.trim(),b=st.notes.trim();if(a)L.push('Name: '+a);if(b)L.push('Notes: '+b);return L.join('\n')};
+const link=()=>{const{c}=sum(),m=c?msg():'';send.href=c?WA+'?text='+encodeURIComponent(m):WA;send.setAttribute('aria-disabled',c?'false':'true');pv.textContent=c?m:SAMPLE;pvl.textContent=c?'Your order so far':'Example order'};
+const lab=q=>{const n=q.dataset.n,v=st.items[n]||0;q.classList.toggle('z',!v);q.children[1].textContent=v;q.children[0].setAttribute('aria-label','Remove one '+n+', '+v+' in your order');q.children[2].setAttribute('aria-label',v?'Add one more '+n+', '+v+' in your order':'Add one '+n+' to your order')};
+function render(){
+const s=sum(),{c,t,u}=s;
+$$('.bd .q').forEach(lab);
+$$('.ct').forEach(e=>e.textContent=c);bag.classList.toggle('e',!c);$('.bs',bag).textContent=t?inr(t)+(u?'+':''):u?'To confirm':'₹0';
+const al=c?'Your order: '+pl(c,'item')+', '+tsay(s)+'. Open to review and send':'Your order is empty';
+bag.setAttribute('aria-label',al);fb.setAttribute('aria-label',al);
+$('b',fb).textContent=t?inr(t):pl(c,'item');$('small',fb).textContent=t?pl(c,'item')+(u?' · '+u+' to confirm':''):'Price to confirm';
+fb.classList.toggle('show',c>0);de.classList.toggle('hasbar',c>0);
+const f=d.activeElement,fq=f&&f.closest&&f.closest('.cl2 .q'),fk=fq&&[fq.dataset.n,f.className];
+list.innerHTML='';
+for(const k of keys()){const v=st.items[k],p=price.get(k),li=d.createElement('li');li.innerHTML='<div><span class="nm"></span><small>'+(p==null?'Price on request':inr(p)+' each')+'</small></div><span class="lt">'+(p==null?'Ask us':inr(p*v))+'</span>';li.querySelector('.nm').textContent=k;const q=ctl(k);lab(q);li.insertBefore(q,li.lastChild);list.append(li)}
+if(fk){const q=$$('.cl2 .q').find(x=>x.dataset.n===fk[0]);(q?q.querySelector('.'+fk[1].split(' ')[0]):list).focus()}
+dlg.classList.toggle('e',!c);
+$('#c-t').textContent=u&&!t?'To confirm':inr(t);
+$('#c-n').textContent=u?'Plus '+pl(u,'item')+' priced on request. We confirm on WhatsApp.':c?'We confirm your order on WhatsApp.':'';
+link();wr();
 }
-Object.keys(M).forEach(k=>{const b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=k;b.onclick=()=>show(k);tabs.append(b)});
-tabs.addEventListener('keydown',e=>{if(!/Arrow(Left|Right)/.test(e.key))return;const bs=[...tabs.children],i=bs.indexOf(document.activeElement),n=bs[(i+(e.key==='ArrowRight'?1:-1)+bs.length)%bs.length];n.focus();n.click()});
-show('Juices');
+const say=s=>{const L=dlg.open?live2:live;live.textContent=live2.textContent='';setTimeout(()=>L.textContent=s,30)};
+const bump=e=>{e.classList.remove('bump');void e.offsetWidth;e.classList.add('bump')};
+function fly(b,had){
+const tg=$('.bi',had&&fb.offsetWidth?fb:bag);
+if(RM.matches||!tg.animate){bump(tg);return}
+const r=R(b),q=R(tg),dx=q.left+q.width/2-r.left-r.width/2,dy=q.top+q.height/2-r.top-r.height/2,f=d.createElement('span');
+f.className='fly';f.innerHTML='<svg><use href="#i-'+(Math.random()<.5?'lem':'lf')+'"/></svg>';f.style.left=r.left+r.width/2-14+'px';f.style.top=r.top+r.height/2-14+'px';d.body.append(f);
+f.animate([{transform:'none'},{transform:`translate(${dx*.45}px,${dy*.5-90}px) scale(1.2) rotate(160deg)`,offset:.5},{transform:`translate(${dx}px,${dy}px) scale(.45) rotate(340deg)`,opacity:.7}],{duration:620,easing:'cubic-bezier(.4,0,.6,1)'}).onfinish=()=>{f.remove();bump(tg)}}
+d.addEventListener('click',e=>{
+const b=e.target.closest('.q button');
+if(b){const n=b.parentNode.dataset.n,add=b.classList.contains('pl'),inMenu=!!b.closest('.bd'),had=sum().c;let v=(st.items[n]||0)+(add?1:-1);if(v>0)st.items[n]=Math.min(v,99);else delete st.items[n];save();render();
+if(inMenu&&!v)b.parentNode.querySelector('.pl').focus();
+const s=sum();say((add?'Added ':'Removed ')+n+'. '+pl(s.c,'item')+' in your order, '+tsay(s)+'.');
+if(add)fly(b,had);return}
+if(e.target.closest('[data-basket-open]')){dlg.showModal();return}
+if(e.target.closest('[data-clear]')){st.items={};save();render();say('Your order is cleared.');$('.x',dlg).focus();return}
+if(e.target.closest('[data-close]'))dlg.close();
+});
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
+dlg.addEventListener('close',()=>{if(!d.activeElement||d.activeElement===d.body)bag.focus()});
+send.addEventListener('click',e=>{if(send.getAttribute('aria-disabled')==='true'){e.preventDefault();say('Your order is empty. Add something from the menu first.')}});
+nm.addEventListener('input',()=>{st.name=nm.value;save();link()});
+nt.addEventListener('input',()=>{st.notes=nt.value;save();link()});
 
-$('#mq').innerHTML='Zero added sugar<span>✦</span>Olive oil only<span>✦</span>No palm oil<span>✦</span>Protein packed<span>✦</span>Fresh daily<span>✦</span>'.repeat(8);
+const top=$('.top'),chips=$('.chips'),stack=$('.stack'),pns=$$('.pn'),ancs=$$('.anc'),cl=$$('.chips a'),cu=$('.chips ul');
+const T=()=>top.offsetHeight+chips.offsetHeight;
+function wr(){const L=$$('.bd li'),r=d.createRange();L.forEach(li=>li.classList.remove('w2'));L.filter(li=>{r.selectNodeContents(li.firstElementChild);return r.getClientRects().length>1}).forEach(li=>li.classList.add('w2'))}
+let cur=-2,tk=0;
+function spy(){tk=0;const y=T()+12;let i=-1;ancs.forEach((a,k)=>{if(!pns[k].hidden&&R(a).top<=y)i=k});
+if(i!==cur){cur=i;cl.forEach((l,k)=>k===i?l.setAttribute('aria-current','location'):l.removeAttribute('aria-current'));if(i>=0){const l=cl[i];cu.scrollTo({left:l.offsetLeft-(cu.clientWidth-l.offsetWidth)/2,behavior:RM.matches?'auto':'smooth'})}}}
+function fit(){const t=T(),h=innerHeight;wr();pns.forEach(p=>{p.style.top=Math.min(t,h-p.offsetHeight)+'px'});spy()}
+addEventListener('scroll',()=>{if(!tk)tk=requestAnimationFrame(spy)},{passive:true});
+let rz=0;addEventListener('resize',()=>{cancelAnimationFrame(rz);rz=requestAnimationFrame(fit)});addEventListener('load',fit);
+if(d.fonts)d.fonts.ready.then(fit);
+d.addEventListener('focusin',e=>{const el=e.target,p=el.closest&&el.closest('.pn');if(!p)return;requestAnimationFrame(()=>{
+const r=R(el),t=T(),h=d.elementFromPoint(r.left+r.width/2,r.top+r.height/2);
+if(h&&el.contains(h))return;
+const off=r.top-R(p).top,a=R(p.previousElementSibling).top+scrollY,v=Math.max((t+innerHeight)/2-off-r.height/2,parseFloat(p.style.top)||t);
+scrollTo({top:a-v,behavior:'instant'})})});
+const qi=$('#q'),sw=$('.srch'),nores=$('#nores'),norm=s=>s.toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();let qt;
+function filt(){const v=norm(qi.value);let n=0;sw.classList.toggle('q',!!qi.value);
+pns.forEach((p,i)=>{const all=!v||norm($('h3',p).textContent).includes(v);let k=0;
+$$('.bd li',p).forEach(li=>{const ok=all||norm(li.firstElementChild.textContent).includes(v);li.hidden=!ok;if(ok)k++});
+$$('.bd>div',p).forEach(g=>g.hidden=!$('li:not([hidden])',g));p.hidden=!k;cl[i].classList.toggle('off',!k);n+=k});
+nores.hidden=n>0;
+const y=R(stack).top+scrollY-T();if(scrollY>y)scrollTo({top:y,behavior:'instant'});
+fit();clearTimeout(qt);qt=setTimeout(()=>{live.textContent=v?(n?n+(n>1?' dishes':' dish')+' found':'No dishes found'):''},500)}
+qi.addEventListener('input',filt);
+qi.addEventListener('keydown',e=>{if(e.key==='Escape'&&qi.value){e.preventDefault();qi.value='';filt()}});
+const reset=()=>{qi.value='';filt();qi.focus()};
+$('.sclr').addEventListener('click',reset);$('[data-qreset]').addEventListener('click',reset);
+const pl4=$('.pl4');if('IntersectionObserver'in window){pl4.classList.add('io');const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.3});$$('li',pl4).forEach(l=>io.observe(l))}
 $('#yr').textContent=new Date().getFullYear();
-
-// loader
-addEventListener('load',()=>setTimeout(()=>$('#load').classList.add('off'),500));
-
-// nav: solid on scroll, show small logo once the hero logo is gone
-const nav=$('#nav');
-addEventListener('scroll',()=>nav.classList.toggle('s',scrollY>30),{passive:true});
-new IntersectionObserver(([e])=>nav.classList.toggle('logo-on',!e.isIntersecting),{rootMargin:'-80px 0px 0px 0px'}).observe($('#heroLogo'));
-
-// reveal on scroll + count-up stats
-const rev=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target)}}),{threshold:.15});
-$$('.up').forEach(el=>rev.observe(el));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);const el=e.target,t=+el.dataset.t,f=+el.dataset.f,s=performance.now();
-(function n(now){const p=Math.min((now-s)/1600,1);el.textContent=Math.round(f+(t-f)*(1-Math.pow(1-p,3)))+'%';if(p<1)requestAnimationFrame(n)})(s)}),{threshold:.6});
-$$('[data-t]').forEach(e=>io.observe(e));
-
-// parallax fruit + cursor ring
-const fr=$$('.fr'),cur=$('#cur');
-addEventListener('mousemove',e=>{const x=e.clientX/innerWidth-.5,y=e.clientY/innerHeight-.5;
-  fr.forEach(f=>{const d=+f.dataset.d;f.style.transform=`translate(${x*d}px,${y*d}px)`});
-  cur.style.transform=`translate(${e.clientX-17}px,${e.clientY-17}px)`;cur.classList.toggle('h',!!e.target.closest('a,button,.it'))});
-
-// reviews carousel
-const q=$$('#rv blockquote'),dots=$('#dots');let ri=0,timer;
-function go(i){q[ri].classList.remove('on');dots.children[ri].removeAttribute('aria-current');ri=i;q[ri].classList.add('on');dots.children[ri].setAttribute('aria-current','true')}
-q.forEach((_,i)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label',`Show review ${i+1}`);b.onclick=()=>{go(i);clearInterval(timer);timer=setInterval(next,6000)};dots.append(b)});
-const next=()=>go((ri+1)%q.length);
-dots.children[0].setAttribute('aria-current','true');timer=setInterval(next,4500);
+const mq=$('.mqt');mq.append(...[...mq.children].map(e=>e.cloneNode(1)));
+render();fit();
+})();
 </script>
 </body>
 </html>
