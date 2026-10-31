@@ -6,7 +6,7 @@ This is the website for Diet Factory, a healthy food and juice spot in BTM 1st S
 
 The site is one static page. It has no build step, no framework and no backend. Visitors can browse the full menu, build an order with + and − buttons, and send that order to Diet Factory on WhatsApp as a ready-made message.
 
-**Live site:** https://dietfactorydotin.github.io/DietFactory/
+**Live site:** https://dietfactory.in/ (main address). The same site is also published on GitHub Pages at https://dietfactorydotin.github.io/DietFactory/.
 
 ## Files
 
@@ -96,8 +96,8 @@ Opening hours are deliberately not shown anywhere on the site.
    ```
    Hi Diet Factory! I'd like to order:
    • 2 × ABC — ₹178
-   • 1 × Grilled Chicken Toast — price to confirm
-   Total: ₹178 (+ items to confirm)
+   • 1 × Grilled Chicken Toast — ₹199
+   Total: ₹377
    Name: ...
    Notes: ...
    ```
@@ -106,12 +106,15 @@ Opening hours are deliberately not shown anywhere on the site.
 
 The basket is saved in the visitor's own browser (`localStorage`, key `df-order-v1`), so it survives a page reload. Nothing is sent to any server. The menu search, the "How to order" chat preview (which switches to the visitor's real order) and the sticky category bar all run in the same inline script.
 
-## Publish with GitHub Pages
+## Publishing
 
-1. Push `index.html`, `404.html`, `.nojekyll` and the `assets/` folder to the `main` branch of `dietfactorydotin/DietFactory`.
-2. On GitHub, open the repository and go to **Settings > Pages**.
-3. Under **Build and deployment**, set **Source** to **Deploy from a branch**.
-4. Set **Branch** to **main** and the folder to **/ (root)**, then click **Save**.
-5. After a minute or two the site is live at https://dietfactorydotin.github.io/DietFactory/. Later pushes to `main` update it automatically.
+Every push to the `main` branch publishes the site in two places automatically:
 
-The canonical URL, Open Graph and Twitter preview tags, and the Restaurant JSON-LD in `index.html` all point at that address. If the site moves to its own domain (for example `dietfactory.in`), update those URLs in the `<head>`.
+- **Vercel** (the `diet-factory` project) builds every push to `main` as the production site. Connect `dietfactory.in` to that project under **Vercel > Project > Settings > Domains**.
+- **GitHub Pages** builds every push to `main` (Settings > Pages > Source: **Deploy from a branch**, Branch: **main**, folder **/ (root)**) and serves it at https://dietfactorydotin.github.io/DietFactory/.
+
+Connect `dietfactory.in` to only one of the two. If it should be GitHub Pages instead of Vercel, add the domain under **Settings > Pages > Custom domain** and point the domain's DNS at GitHub Pages.
+
+The canonical URL, Open Graph and Twitter preview tags and the Restaurant JSON-LD in `index.html` all point at `https://dietfactory.in/`. Search engines and link previews treat that as the main address, even when the page is opened from the GitHub Pages or Vercel address. If the main address ever changes, search and replace `https://dietfactory.in/` in `index.html` and `404.html`.
+
+All asset paths are relative, so the same files work at `/` (Vercel, dietfactory.in) and at `/DietFactory/` (GitHub Pages). `404.html` works out which of the two it is on by itself.
