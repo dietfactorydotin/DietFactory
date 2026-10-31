@@ -2,7 +2,7 @@
 
 **Where health meets wellness.**
 
-This is the website for Diet Factory, a healthy food and juice spot in BTM 1st Stage, Bengaluru. It sells fresh juices, shakes and smoothies, toasts, bowls, salads and hot teas, made with zero added sugar, olive oil only, no palm oil and air frying only.
+This is the website for Diet Factory, a healthy food and juice spot in BTM 1st Stage, Bengaluru. It sells fresh juices, shakes and smoothies, toasts, bowls, salads and hot teas, made with no refined sugar, olive oil only, no palm oil and air frying only.
 
 The site is one static page. It has no build step, no framework and no backend. Visitors can browse the full menu, build an order with + and − buttons, and send that order to Diet Factory on WhatsApp as a ready-made message.
 
@@ -80,6 +80,7 @@ The menu is plain HTML inside `index.html`, so it also shows when JavaScript is 
 | WhatsApp | same number | `https://wa.me/916362248157` links and the `WA` constant in the script |
 | Email | info@dietfactory.in | `mailto:` links in visit and footer |
 | Address | Diet Factory, 12th Cross, Maruthi Nagar, BTM 1st Stage, Madiwala, Bengaluru 560068 | Visit section, footer, JSON-LD block in `<head>` |
+| Map | https://maps.app.goo.gl/jpncUrEu9LxP2L2U6 | "Get directions" and "Open in Google Maps" buttons, JSON-LD `hasMap` (the embedded map searches for "Diet Factory" at the address) |
 | Instagram | https://www.instagram.com/dietfactory.in/ | Visit, footer, JSON-LD `sameAs` |
 
 If the number changes, search and replace both `916362248157` and `63622 48157`, in `index.html` and `404.html`.
