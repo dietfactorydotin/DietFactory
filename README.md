@@ -2,7 +2,7 @@
 
 **Where health meets wellness.**
 
-This is the website for Diet Factory, a healthy food and juice spot in BTM 1st Stage, Bengaluru. It sells fresh juices, shakes and smoothies, bowls, toasts and salads, made with zero added sugar, olive oil only, no palm oil and air frying only.
+This is the website for Diet Factory, a healthy food and juice spot in BTM 1st Stage, Bengaluru. It sells fresh juices, shakes and smoothies, toasts, bowls, salads and hot teas, made with zero added sugar, olive oil only, no palm oil and air frying only.
 
 The site is one static page. It has no build step, no framework and no backend. Visitors can browse the full menu, build an order with + and − buttons, and send that order to Diet Factory on WhatsApp as a ready-made message.
 
@@ -48,11 +48,11 @@ The menu is plain HTML inside `index.html`, so it also shows when JavaScript is 
 ```html
 <span class="anc" id="juices"></span>
 <section class="pn pw" aria-labelledby="h-ju"><div class="wrap">
-<header class="ph"><p class="pnum">01 / 05 · 11 juices</p><h3 id="h-ju">Juices</h3>
+<header class="ph"><p class="pnum">01 / 06 · 11 juices</p><h3 id="h-ju">Juices</h3>
 <div class="ill" aria-hidden="true">…illustration…<span class="from">from<b>₹59</b></span></div></header>
 <div class="bd two">
-<div><h4>Signature blends</h4><ul>
-<li><span>ABC</span><b>₹89</b></li>
+<div><h4>Fresh juices</h4><ul>
+<li><span>Papaya</span><b>₹59</b></li>
 …
 </ul></div>
 …
@@ -61,13 +61,15 @@ The menu is plain HTML inside `index.html`, so it also shows when JavaScript is 
 - **One item** is one line: `<li><span>Item name</span><b>₹price</b></li>`.
 - **Change a price:** edit the number inside `<b>`. The order builder reads the price from there, so there is nothing else to update.
 - **Item with no price yet:** use `<li><span>Grilled Chicken Toast</span><b class="ask">Ask us</b></li>`. It can still be added to an order, and the WhatsApp message says "price to confirm".
+- **Diet Factory signature badge:** put the small logo inside the name, after the text: `<li><span>Skin Glow<img class="sig" src="assets/logo-green-wordmark.webp" width="520" height="276" alt="Diet Factory signature" loading="lazy"></span><b>₹119</b></li>`. On green panels (`pg`) use `assets/logo-cream-wordmark.webp` (height `275`) instead. The name must stay the first text in the `<span>`.
+- **Optimum Nutrition tag:** add `<small class="onb">Optimum Nutrition</small>` after the badge, as on Signature Protein Shake.
 - **Add or remove an item:** copy or delete an `<li>` line. Every item name must be unique, because the saved basket stores items by name.
 - **Then update the counts and "from" prices** that are typed in by hand:
   - the category count in the sticky bar, for example `Juices<span aria-hidden="true">11</span>` inside `<nav aria-label="Menu sections">`
-  - the panel label, for example `<p class="pnum">01 / 05 · 11 juices</p>`
+  - the panel label, for example `<p class="pnum">01 / 06 · 11 juices</p>`
   - the lowest price sticker, for example `<span class="from">from<b>₹59</b></span>`
-  - the line `33 items · 5 categories · prices in ₹` above the menu
-- **Juices** has two groups (`Signature blends`, `Fresh juices`), each a `<div><h4>…</h4><ul>…</ul></div>`. Other categories use one `<div class="bd"><ul>…</ul></div>`.
+  - the line `35 items · 6 categories · prices in ₹` above the menu
+- **Juices** has two groups (`Fresh juices`, `Blends`), each a `<div><h4>…</h4><ul>…</ul></div>`. Other categories use one `<div class="bd"><ul>…</ul></div>`.
 - **New category:** copy an `anc` + `section` pair, give it a new `id`, and add a matching link to the sticky bar (`<li><a href="#new-id">Name<span aria-hidden="true">N</span></a></li>`). Panels alternate white (`pw`) and green (`pg`).
 
 ## Contact details
